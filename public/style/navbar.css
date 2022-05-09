@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@200;400;500;600&family=Roboto+Condensed:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+#ravnav {
+    height: 100px;
+    background-color: rgb(33,33,33);
+    display: flex;
+}
+
+#ravnavone {
+    width: 17%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ravnavtwo {
+    width: 90%;
+    height: 100%;
+}
+
+#ravnavtwoone {
+    height: 35%;
+    /* border: 2px solid green; */
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0,0,0);
+    color: #fff;
+}
+
+#uldesign {
+    list-style: none;
+    display: flex;
+}
+
+#uldesign li {
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+.rav2 p:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.rav3 p:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.rav4 p:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.rav5 p:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.ravone1 {
+    width: 20%;
+    cursor: pointer;
+}
+
+.ravone2  {
+    width: 90%;
+    display: flex;
+    justify-content: end;
+}
+
+#ravnavtwotwo {
+    height: 65%;
+    /* background-color: black; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+.two1 {
+    flex: .1;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    /* background-color: red; */
+}
+
+.two1:hover {
+    flex: .1;
+    background-color: #fff;
+    color: #000;
+}
+
+.two2 {
+    flex: .1;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    /* background-color: red; */
+}
+
+.two2:hover {
+    flex: .1;
+    background-color: #fff;
+    color: #000;
+}
+
+#search {
+    width: 95%;
+    padding: 0 20px;
+    height: 60%;
+    border-radius: 2px;
+    border: 0;
+    outline: none;
+    background-color: rgb(74,74,74);
+    color: #fff;
+}
+
+.two3 {
+    height: 100%;
+    flex: .7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.two4 {
+    flex: .1;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.two4 svg:first-child {
+    margin-top: 3px;
+}
+
+/* ravbox1 */
+
+.ravbox1 {
+    width: 80.2%;
+    margin-right: 50px;
+    height: 500px;
+    float: right;
+    display: flex;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    z-index: 1000;
+}
+
+.rav1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.rav1 p {
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(163, 161, 161);
+    margin: 0 20px;
+    border-bottom: 1px solid rgb(158, 158, 158);
+    /* margin-top: 20px; */
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.rav1 p:hover {
+    font-weight: 600;
+    color: #000;
+}
+
+.rav1 p:first-child {
+    padding-top: 30px;
+}
+
+.rav1 p:last-child {
+    border-bottom: 0;
+}
+
+.rav2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px 0;
+    padding: 20px 20px;
+}
+
+.rav3 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px 0;
+    padding: 20px 20px;
+}
+
+.rav4 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px 20px;
+}
+
+.rav5 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px 0;
+    padding: 20px 20px;
+}
+
+.ravbox2 {
+    width: 80.2%;
+    margin-right: 50px;
+    height: 500px;
+    float: right;
+    /* display: flex; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    z-index: 1000;
+}
+
+/* .dis {
+    width: 80.2%;
+    margin-right: 50px;
+    height: 500px;
+    float: right;
+    display: flex;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: flex;
+} */
+
+@media only screen and (min-width: 375px) and (max-width: 768px) {
+
+    #navbar {
+        width: 100%;
+    }
+
+    #ravnavtwoone {
+        display: none;
+    }
+
+    /* .two3 {
+        display: none;
+    } */
+
+    .two2 {
+        display: none;
+    }
+
+    #ravnavtwo {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    #ravnavtwotwo {
+        width: 90%;
+    }
+
+    .two4 svg:last-child {
+        margin-left: 10px;
+        width: 40px;
+    }
+
+    .two1:hover {
+        background-color: rgb(33,33,33);
+        color: red;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 375px) {
+
+    #navbar {
+        width: 100%;
+    }
+
+    #ravnavtwoone {
+        display: none;
+    }
+
+    .two2 {
+        display: none;
+    }
+
+    #ravnavtwo {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    #ravnavtwotwo {
+        width: 90%;
+    }
+
+    .two4 svg:last-child {
+        margin-left: 10px;
+        width: 40px;
+    }
+
+    .two1:hover {
+        background-color: rgb(33,33,33);
+        color: red;
+    }
+
+    .ravbox1 {
+        display: none;
+    }
+
+    .two3 {
+        display: none;
+    }
+
+    #uldesign li:last-child{
+    color: white;
+    text-decoration: none;
+}
+}
+

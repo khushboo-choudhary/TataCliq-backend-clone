@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/navbar.css">
+    <style>
+        *{
+          margin:0;
+          padding:0;
+          font-family: sans-serif;         
+        }
+
+        body{
+            background-color:  rgb(236,236,236);
+        }
+
+       .container{
+           width: 80%;
+           min-height: 500px;
+           margin: auto;
+           position: relative;
+           background-color: rgb(236,236,236);
+       }
+       
+       #head_check{
+          border: 1px solid transparent;
+       }
+
+       .form_div{
+           border: 1px solid transparent;
+           width: 100%;
+           height:600px;
+           display: flex;
+           justify-content: space-between;
+       }
+
+       #form{
+           border: 1px solid transparent;
+           width: 65%;
+           height:100%
+       }
+
+       #total{
+        border: 1px solid transparent;
+           width: 30%;
+           height:45%
+       }
+
+       #ship_head{
+           border: 1px solid transparent;
+           padding:13px;
+           display: flex;
+           justify-content: space-between;
+       }
+
+       #ship_head>h3{
+           border: 1px solid transparent;
+           width: 40%;
+           height: 30px;
+           font-size: 16px;
+           color: #000000;
+       }
+
+       #ship_head>p{
+           color: #212121;
+           cursor: pointer;
+           font-size: 14px;
+           text-decoration-line: underline;
+       }
+
+       #first_name{
+           
+           width: 169px;
+        }
+
+       #last_name{
+           
+           width: 169px;
+          
+       }
+
+       #form{
+           padding:13px;
+           border: 1px solid transparent;
+           height:86%;
+           background-color: white;
+           
+       }
+
+       #add_form{
+           border-bottom: 1px solid #9e9d9d;
+           height: 70%;
+           background-color: white;
+           
+       }
+
+       #pincode{
+       
+        margin-left: 25px;
+        width: 249px;
+       }
+
+       input{
+        font-size: 14px;
+        height: 35px;
+        padding: 3px;
+        border-radius: 5px;
+        border: 1px;
+        border-color: #d2d2d2;
+        border-style: solid;
+       }
+
+       #city{
+           margin-top: 0;
+           width:352px
+       }
+
+       #full_address{
+        margin-left: 25px;
+        width: 249px;
+        height: 96px;
+        margin-top: 30px;
+        overflow-wrap: break-word;
+       }
+
+       #state{
+           width: 352px;
+           margin-top: 30px;
+       }
+       #city_state{
+           display: flex;
+           flex-direction: column;
+           margin-top: 30px;
+       }
+       #add{
+           display: flex;
+       }
+       #comp_add{
+           display: flex;
+           flex-direction: column;
+       }
+       #char_limit{
+           border: 1px solid transparent;
+           width: 378px;
+           margin-left: 25px;
+           font-size: 12px;
+           color:rgb(58, 56, 56);
+           margin-top: 3px;
+       }
+       #land{
+        margin-top: 30px; 
+        width: 352px;
+        height: 42px;
+        border-color: #d2d2d2;
+        border-radius: 5px; 
+       }
+       #land>option{
+        color:lightgray;
+       }
+       #phone_no{
+        margin-top: 23px;
+        width: 249px;
+        margin-left: 25px;
+       }
+       .btn{
+           border: 1px solid transparent;
+           width: 350px;
+           height: 50px;
+           margin-top: 23px;
+           display: flex;
+       }
+       #home{
+           border: 1px solid transparent;
+           width: 50%;
+           height: 100%;
+          
+           
+       }
+       #office{
+           border: 1px solid transparent;
+           width: 50%;
+           height: 100%;
+
+       }
+       #hom{
+           margin-bottom: 6px;
+           border: 1px solid transparent;
+          
+       }
+       #continue{
+           border: 1px solid transparent;
+           width: 40%;
+           height: 20%;
+           margin-left: 60%;
+           display: flex;
+           justify-content: space-around;
+           margin-top: 20px;
+           
+           
+       }
+       #button{
+         
+           width: 150px;
+           height: 40px;
+           border-radius: 20px;
+           background-color: rgb(255,23,68);
+           color: white;
+           font-size: 15px;
+           border: none;  
+       }
+       #continue>p{
+         color: rgb(255,23,68);
+         font-weight: bolder;
+         margin-top: 5px;
+         letter-spacing: 4px;
+       }
+       #total{
+           border: 1px solid black;
+           background-color: white;
+       }
+       .subtotal{
+           display: flex;
+           justify-content: space-between;
+           padding: 10px;
+           font-size: 14px;
+         color: #212121;;
+       }
+       #color_green{
+           color: green;
+          border-bottom: 1px solid rgb(201, 199, 199);
+          height: 40px;
+          margin-top: 6px;
+       }
+       #one{
+        font-size: 20px;
+        font-weight: bolder;
+        
+       }
+       #two{
+        font-size: 20px;
+       }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        
+    </div>
+<div class="container">
+
+    <h1 id="head_check">Checkout</h1>
+   <div class="form_div">
+       <div id="form">
+           <div id="ship_head">
+               <h3>Add Shipping Address</h3>
+               <p>Clear All</p>
+           </div>
+           <form id="add_form" action="/thankyou">
+               <input id="first_name" placeholder="First Name(Required)*" required>
+               <input id="last_name"  placeholder="Last Name(Required)*">
+               <input id="pincode"  placeholder="Enter your PIN code(Required)*" required>
+               <br>
+               <div id="add">
+                <div id="city_state">
+                    <input id="city"    placeholder="City/district(Required)*" required>
+                    <input id="state" placeholder="State(Required)*" required>
+                   
+                    <select id="land">
+                        <option value="Landmark" >Landmark</option>
+                        </select>
+                        <div class="btn">
+                         <div id="home"><input type="radio"  name="fav_language" value="HTML">
+                            <label for="html" id="hom">Home</label><br>
+                        </div>
+                         <div id="office"><input type="radio" name="fav_language" value="HTML" required>
+                            <label for="html" id="official" >Official</label><br>
+                        </div>
+                        </div>
+                   </div>
+                   <div id="comp_add">
+                    <input id="full_address" placeholder="Flat/House No., Floor, Building/Company/Apartment Name,&#10;
+                    Road/Street Name, Area, Colony,
+                    Sector, Village (Required)*" required>
+                    <p id="char_limit">Character Limit : 120</p>
+                    <input id="phone_no" placeholder="Phone/Mobile Number (Required)*" required>
+                     
+                   </div>
+                  
+                
+                  
+                   
+                   
+               </div>
+              <input id="button" type="submit" value="Save & Continue">
+              
+           </form>
+           <!-- <div id="continue">
+               <p>Cancel</p>
+               <button id="button"><a href="/thankyou" style="text-decoration: none;color: white;">Save & Continue</a></button>
+           </div> -->
+       </div>
+       <div id="total">
+           <p class="subtotal">
+               <span class="one">Bag Total</span>
+               <span class="two">₹3198.00</span>
+        </p>
+           <p class="subtotal">
+               <span class="one">Shipping Charges</span>
+               <span class="two">₹49.00</span>
+        </p>
+           <p class="subtotal">
+               <span class="one">Bag Subtotal</span>
+               <span class="two">₹3247.00</span>
+        </p>
+           <p class="subtotal">
+               <span class="one">Product Discount(s)</span>
+               <span class="two">-₹1919.00</span>
+        </p>
+        <p id="color_green">You will save ₹1919.00 on this order</p>
+        <p id="payable" class="subtotal">
+            <span id="one">Total Payable</span>
+               <span id="two">₹1328.00</span>
+        </p>
+       </div>
+   </div>
+</div>
+   
+</body>
+<script src="/script/navmain.js" type="module"></script>
+</html>

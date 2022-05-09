@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/style/navbar.css">
+    <link rel="stylesheet" href="/style/index.css">
+    <link rel="stylesheet" href="/style/footer.css">
+    <link rel="icon" href="https://www.tatacliq.com/favicon.ico" type="png">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="all">
+    <div id="ravmain">
+    <div id="navbar">
+        
+    </div>
+
+    <div>
+        <img id="ravfirstbox" src="/image/bg1.jpg" width="100%" height="100%">
+    </div>
+
+    <div id="ravsecondbox">
+        <div class="ravsecondbox1"></div>
+        <div class="ravsecondbox2"></div>
+        <div class="ravsecondbox3"></div>
+        <div class="ravsecondbox4"></div>
+        <div class="ravsecondbox5"></div>
+        <div class="ravsecondbox6"></div>
+        <div class="ravsecondbox7"></div>
+        <div class="ravsecondbox8"></div>
+        <div class="ravsecondbox9"></div>
+    </div>
+
+    <div id="ravposter">
+        <div class="ravposter1">
+            <div class="ravposter11"></div>
+        </div>
+        <div class="ravposter2">
+            <div class="ravposter12"></div>
+        </div>
+    </div>
+
+    <div id="ravposterm">
+        <div class="ravposterm1"></div>
+    </div>
+</div>
+
+<div id="ravposterm1">
+    <div class="ravposterm2"></div>
+</div>
+
+<div id="ravgrid1">
+
+</div>
+
+<div id="ravposterm2">
+    <div class="ravposterm3"></div>
+</div>
+
+<div id="ravgrid2">
+
+</div>
+
+<div id="ravposterm2">
+    <div class="ravposterm4"></div>
+</div>
+
+<div id="ravgrid3">
+
+</div>
+
+<div id="ravposterm2">
+    <div class="ravposterm5"></div>
+</div>
+
+<div id="ravgrid4">
+
+</div>
+
+<div id="ravgrid5">
+
+</div>
+<div id="ravposterm">
+    <div class="ravposterm6"></div>
+</div>
+<div id="ravgrid6">
+
+</div>
+<div id="ravgrid7">
+
+</div>
+<div id="ravposterm">
+    <div class="ravposterm7"></div>
+</div>
+
+<div id="ravgrid8">
+
+</div>
+<div id="ravgrid9">
+
+</div>
+<div id="ravposterm2">
+    <div class="ravposterm9"></div>
+</div>
+<!-- display none -->
+<div id="ravtwobox">
+    <div class="ravtwobox1">
+        <img src="/image/shoes.jpg" width="100%" height="100%">
+    </div>
+    <div class="ravtwobox2">
+        <img src="/image/shirts.jpg" width="100%" height="100%">
+    </div>
+</div>
+<div id="ravposterm">
+    <div class="ravposterm8"></div>
+</div>
+<div id="ravgrid10">
+    
+
+</div>
+<div id="ravposterm2">
+    <div class="ravposterm9"></div>
+</div>
+<!-- display none -->
+<div id="ravtwobox">
+    <div class="ravtwobox1">
+        <img src="https://assets.tatacliq.com/medias/sys_master/images/32396678299678.jpg" width="100%" height="100%">
+    </div>
+    <div class="ravtwobox2">
+        
+        <img src="https://assets.tatacliq.com/medias/sys_master/images/32396678496286.jpg" width="100%" height="100%">
+        
+    </div>
+</div>
+</div>
+</div>
+<div id="Foot_container">
+
+</div>
+</body>
+<script src="/script/index.js"></script>
+<script src="/script/navmain.js" type="module"></script>
+<script src="/script/data.js" type="module"></script>
+</html>
+
+<script type="module">
+    import deliveryOfData from '/script/data.js';
+
+    import footer from '/script/footer.js';
+    let foot = document.querySelector('#Foot_container');
+
+    foot.innerHTML = footer();
+
+    let url = deliveryOfData();
+    // console.log(url.line1[0]);
+    console.log('saurav')
+for(let i = 0; i <= 3; i++) {
+    let div1 = document.createElement('div');
+    div1.setAttribute('class', 'ravgrid11');
+    let img1 = document.createElement('img');
+    img1.src = url.line1[i];
+    document.querySelector('#ravgrid1').append(div1);
+    div1.append(img1)
+
+    //box 2
+
+    let div2 = document.createElement('div');
+    div2.setAttribute('class', 'ravgrid11');
+    let img2 = document.createElement('img');
+    img2.src = url.line2[i];
+    document.querySelector('#ravgrid2').append(div2);
+    div2.append(img2)
+
+    //box 3
+    let div3 = document.createElement('div');
+    div3.setAttribute('class', 'ravgrid11');
+    let img3 = document.createElement('img');
+    img3.src = url.line3[i];
+    document.querySelector('#ravgrid3').append(div3);
+    div3.append(img3)
+
+     //box 4
+     let div4 = document.createElement('div');
+    div4.setAttribute('class', 'ravgrid11');
+    let img4 = document.createElement('img');
+    img4.src = url.line6[i];
+    document.querySelector('#ravgrid4').append(div4);
+    div4.append(img4)
+
+    //box 5
+    let div5 = document.createElement('div');
+    div5.setAttribute('class', 'ravgrid11');
+    let img5 = document.createElement('img');
+    img5.src = url.line5[i];
+    document.querySelector('#ravgrid5').append(div5);
+    div5.append(img5)
+
+    //box 6
+    let div6 = document.createElement('div');
+    div6.setAttribute('class', 'ravgrid11');
+    let img6 = document.createElement('img');
+    img6.src = url.line10[i];
+    document.querySelector('#ravgrid6').append(div6);
+    div6.append(img6)
+
+    //box 7
+    let div7 = document.createElement('div');
+    div7.setAttribute('class', 'ravgrid11');
+    let img7 = document.createElement('img');
+    img7.src = url.line12[i];
+    document.querySelector('#ravgrid7').append(div7);
+    div7.append(img7);
+
+    //box 8
+    let div8 = document.createElement('div');
+    div8.setAttribute('class', 'ravgrid11');
+    let img8 = document.createElement('img');
+    img8.src = url.line14[i];
+    document.querySelector('#ravgrid8').append(div8);
+    div8.append(img8)
+
+    //box 9
+    let div9 = document.createElement('div');
+    div9.setAttribute('class', 'ravgrid11');
+    let img9 = document.createElement('img');
+    img9.src = url.line15[i];
+    document.querySelector('#ravgrid9').append(div9);
+    div9.append(img9)
+
+    //box 10
+    let div10 = document.createElement('div');
+    div10.setAttribute('class', 'ravgrid11');
+    let img10 = document.createElement('img');
+    img10.src = url.line17[i];
+    document.querySelector('#ravgrid10').append(div10);
+    div10.append(img10)
+}
+
+document.querySelector('#ravgrid1').addEventListener('click', function() {
+    window.location.href = '/products'
+})
+
+document.querySelector('#ravgrid2').addEventListener('click', function() {
+    window.location.href = '/products'
+})
+
+
+document.querySelector('#ravgrid3').addEventListener('click', function() {
+    window.location.href = '/products'
+})
+
+document.querySelector('#ravgrid4').addEventListener('click', function() {
+    window.location.href = '/products'
+})
+
+document.querySelector('#ravgrid5').addEventListener('click', function() {
+    window.location.href = '/products'
+})
+</script>

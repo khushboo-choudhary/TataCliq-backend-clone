@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@200;400;500;600&family=Roboto+Condensed:wght@300;400&display=swap');
+
+
+        #footer{
+            width: 99.50%;
+            height: auto;
+            background-color: #f9f9f9;
+            margin-top: 30px;
+            font-family: 'Lato', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+        }
+        #foot{
+            width: 85%;
+            height: auto;
+            margin: auto;
+            font-size: 12px;
+            margin-top: 30px;
+            line-height: 20px;   
+            margin-bottom: 30px;
+        }
+        a{
+            color: black;
+        }
+        #foot_top{
+            width: 85%;
+            margin: auto;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+       
+        #foot_top > #app{
+            display: flex;
+            justify-content: space-around;
+            width: 15%;
+        }
+        #foot_top > #icon{
+            display: flex;
+            justify-content: space-around;
+            width: 15%;
+        }
+        #tata{
+            width: 90%;
+        }
+
+        h4 {
+            margin-bottom: 12px;
+            /* word-spacing: 12px; */
+            letter-spacing: .8px;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        #list{
+            font-size: 12px;
+            font-weight: 100;
+            padding-top: 30px;
+            width: 83%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 20%);
+          }
+          #list > #box1{
+              width: 80%;
+              line-height: 150%;
+          }
+          #list > #box2{
+              width: 80%;
+              line-height: 150%;
+          }
+          #list > #box3{
+              width: 80%;
+              line-height: 150%;
+          }
+          #list > #box4{
+              width: 195%;
+              line-height: 180%;
+      
+          }
+          .list-unstyled {
+            padding-left: 0;
+            list-style: none;
+        }
+        .list-unstyled>li{
+            padding-bottom: 10px;
+        }
+        .list-unstyled>li>a{
+            color: grey;
+            text-decoration: none;
+        }
+        #details{
+            width: 99.50%;
+            background-color: #f9f9f9;
+            margin-top: 30px;
+            height: 100px;
+          }
+          #flex{
+              display: flex;
+              margin: auto;
+              justify-content: space-evenly;
+          }
+          #flex > h4{
+              margin-top: 40px;
+              font-size: 17px;
+          }
+         
+
+          
+@media only screen and (min-width: 638px) and (max-width: 1024px) {
+    #list {
+        display: none;
+    }
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 638px) {
+    #list, #details, #foot_top {
+        display: none;
+    }
+}

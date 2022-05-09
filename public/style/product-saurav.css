@@ -1,0 +1,210 @@
+body{
+    background-color: #ececec;
+}
+
+#twobox {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    padding: 0% 4%;
+}
+
+#twobox img {
+    transition: all .2s ease-in-out;
+    border-radius: 7px;
+}
+
+#twobox img:hover {
+    transform: scale(1.03);
+}
+
+.filter {
+    width: 200px;
+    background-color: white;
+    width: 20%;
+    display: inline-block;
+    position: sticky;
+    bottom: 15px;
+    vertical-align: bottom; 
+    height: 900px;
+}
+
+#div1s {
+    height: 450px;
+}
+
+.fil1 {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f5f5f5;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.fil1 > #clear{
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fil2{
+    margin-top: 10px;
+    padding: 20px 30px;
+}
+
+.fil2 > #round{
+    background-color: #f5f5f5;
+    width: auto;
+    font-size: 16px;
+    padding: 0px 9px 0px 10px;
+    color:#8d8d8d;
+    border-radius: 100px;
+    margin-top: 10px;
+    font-family: "light";
+    line-height: 30px;
+    height: auto;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.fil3 {
+    margin: 10px;
+    padding: 20px 30px;
+}
+.fil3 > .p{
+    background-color: #f5f5f5;
+    width: auto;
+    font-size: 16px;
+    padding: 0px 9px 0px 10px;
+    color:#8d8d8d;
+    border-radius: 100px;
+    margin-top: 10px;
+    font-family: "light";
+    line-height: 30px;
+    height: auto;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.eta{
+    background-color: #f5f5f5;
+    width: 80px;
+    font-size: 16px;
+    padding: 0px 9px 0px 10px;
+    color:#8d8d8d;
+    border-radius: 100px;
+    margin-top: 10px;
+    font-family: "light";
+    line-height: 30px;
+    height: auto;
+    display: block;
+}
+#ravmain {
+    width: 75%;
+    min-height: 250px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+   
+}
+
+#div1s img {
+    width: 100%;
+    height: 60%;
+}
+
+.imgF:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#div1s > p{
+    margin-top: 10px;
+}
+#div1s > p:nth-child(3){
+    margin-top: 10px;
+    color: gray;
+}
+.button{
+    margin: auto;
+    text-align: center;
+    width: 55%;
+    padding: 5px;
+    background-color: rgb(196, 196, 196);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 7px;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
+}
+
+#f1{
+    margin: auto;
+    margin-top: 15px;
+    width: 85%;
+    border: 1px solid #ececec;  
+}
+#f2, #f3{
+    margin: auto;  
+    width: 85%;
+    border: 1px solid #ececec; 
+}
+
+.fil4{
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.accordion {
+   
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    border-bottom: 1px solid #ececec;
+  }
+
+  .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+
+@media only screen and (min-width: 375px) and (max-width: 820px) {
+    #ravmain {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+       
+    }
+    .filter{
+        width: 32%;
+    }
+    #twobox{
+        display: flex;
+        gap: 20px;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 375px) {
+    #ravmain {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);  
+    }
+    .filter{
+        display: none;
+    }
+    
+}
