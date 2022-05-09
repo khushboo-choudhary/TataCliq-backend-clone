@@ -10,6 +10,7 @@ passport.use(
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: "https://sleepy-scrubland-64819.herokuapp.com/",
+      // callbackURL: "https://dry-refuge-47566.herokuapp.com/",
       passReqToCallback: true,
     },
 
