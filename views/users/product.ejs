@@ -1,91 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="/style/navbar.css">
-    <link rel="stylesheet" href="/style/footer.css">
-    <link rel="stylesheet" href="style/product.css">
-    <title>Product</title>
-</head>
-<body>
-    <div id="navbar">
-
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/style/navbar.css" />
+    <link rel="stylesheet" href="/style/footer.css" />
+    <link rel="stylesheet" href="style/product.css" />
+    <link rel="icon" href="https://www.tatacliq.com/favicon.ico" type="png" />
+    <title>Product Details - Tata CLiQ</title>
+  </head>
+  <body>
+    <div id="navbar"></div>
     <!-- Main  -->
-<div id="twobox">
-    <div class="filter">
+    <div id="twobox">
+      <div class="filter">
         <div class="fil1">
-            <p>Filters</p>
-            <p>Clear All</p>
+          <p>Filters</p>
+          <p>Clear All</p>
         </div>
-<hr>
+        <hr />
         <div class="fil2">
-            <p>Department</p>
-            <p>Clothing</p>
+          <p>Department</p>
+          <p>Clothing</p>
         </div>
 
         <div class="fil3">
-            <a href="/products"><p style="color: red;">Category</p></a>
-            
-            <a href="/products?name=remanika"><p class="Nuon">Remanika</p></a>
-            <a href="/products?name=levis"><p class="Nuon">Levi's</p></a>
-            <a href="/products?name=arrow"><p class="Nuon">Arrow</p></a>
-            <a href="/products?name=lacoste"><p class="Nuon">lacoste</p></a>
-            <a href="/products?name=nuonman"><p class="Nuon">Nuon Man</p></a>
-            <a href="/products?name=wesformals"><p class="wesF">WES Formals</p></a>
-            <a href="/products?name=wescasuals"><p class="wesC">WES Casuals</p></a>
-            <a href="/products?name=eta"><p>Eta</p></a>
-            <a href="/products?name=ascot"><p>Ascot</p></a>
-            
-    </div>
-    </div>
-    <div id="ravmain">
-            <% for(product of product) { %>
-                <div>
-                    <img src=<%= product.image %>
-                    width="210px">
-                <p class="main-text"><%= product.title %></p>
-                <p class="second-text"><%= product.description %></p>
-                <p class="money">₹<%= product.mainPrice %> <span><del>₹<%= product.discontPrice %></del></span></p>
+          <a href="/products"><p style="color: red">Category</p></a>
 
-                <p class="button" onClick="sendDataToCart('<%= JSON.stringify(product)%>')">Buy Now</p>
-            </div>
-                <% } %>
-                <script>
+          <a href="/products?name=remanika"><p class="Nuon">Remanika</p></a>
+          <a href="/products?name=levis"><p class="Nuon">Levi's</p></a>
+          <a href="/products?name=arrow"><p class="Nuon">Arrow</p></a>
+          <a href="/products?name=lacoste"><p class="Nuon">lacoste</p></a>
+          <a href="/products?name=nuonman"><p class="Nuon">Nuon Man</p></a>
+          <a href="/products?name=wesformals"
+            ><p class="wesF">WES Formals</p></a
+          >
+          <a href="/products?name=wescasuals"
+            ><p class="wesC">WES Casuals</p></a
+          >
+          <a href="/products?name=eta"><p>Eta</p></a>
+          <a href="/products?name=ascot"><p>Ascot</p></a>
+        </div>
+      </div>
+      <div id="ravmain">
+        <% for(product of product) { %>
+        <div>
+          <img src="<%" ="product.image" % />
+          width="210px">
+          <p class="main-text"><%= product.title %></p>
+          <p class="second-text"><%= product.description %></p>
+          <p class="money">
+            ₹<%= product.discontPrice %>
+            <span><del>₹<%= product.mainPrice %></del></span>
+          </p>
 
-                    let arr = JSON.parse(localStorage.getItem("cart_data")) || [];
-                    function sendDataToCart(product) {
-                    product = JSON.parse(product);
-                    arr.push(product);    
-                    localStorage.setItem("cart_data", JSON.stringify(arr));               
-}
-                </script>
-</div>
-</div>
+          <p
+            class="button"
+            onClick="sendDataToCart('<%= JSON.stringify(product)%>')"
+          >
+            Buy Now
+          </p>
+        </div>
+        <% } %>
+        <script>
+          let arr = JSON.parse(localStorage.getItem("cart_data")) || [];
+          function sendDataToCart(product) {
+            product = JSON.parse(product);
+            arr.push(product);
+            localStorage.setItem("cart_data", JSON.stringify(arr));
+          }
+        </script>
+      </div>
+    </div>
 
     <!-- Main end -->
-    <div id="Foot_container">
-
-    </div>
-</body>
-<!-- <script src="/script/index.js"></script> -->
-<script src="/script/navmain.js" type="module"></script>
-<script src="/script/data.js" type="module"></script>
+    <div id="Foot_container"></div>
+  </body>
+  <!-- <script src="/script/index.js"></script> -->
+  <script src="/script/navmain.js" type="module"></script>
+  <script src="/script/data.js" type="module"></script>
 </html>
- 
+
 <script type="module">
-    import footer from '/script/footer.js';
+  import footer from "/script/footer.js";
 
-      let foot = document.querySelector('#Foot_container');
+  let foot = document.querySelector("#Foot_container");
 
-    foot.innerHTML = footer();
+  foot.innerHTML = footer();
 
-// function sendDataToCart(product) {
-//     product = JSON.parse(product);
-//     console.log(product)
-// }
-</script> 
+  // function sendDataToCart(product) {
+  //     product = JSON.parse(product);
+  //     console.log(product)
+  // }
+</script>

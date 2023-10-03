@@ -1,7 +1,9 @@
-
+let arr = JSON.parse(localStorage.getItem("cart_data")) || [];
+console.log(arr);
+let cartLength = arr.length;
 
 function navbar() {
-    return `<div id="ravnav">
+  return `<div id="ravnav">
     <div id="ravnavone">
         <svg xmlns="http://www.w3.org/2000/svg" width="70%" height="40%" viewBox="0 0 38 22">
             <g fill="none" fill-rule="evenodd">
@@ -37,6 +39,7 @@ function navbar() {
                     </g>
                 </svg>
                 <a href="/cart"></a>
+                <span id="cart-length">${cartLength}</span>
                 <svg height="40%" viewBox="0 0 50 50" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="m44.419 11.704c0-.649-.646-1.183-1.29-1.183h-6.613c-.645-5.912-5.55-10.527-11.516-10.527-5.952 0-10.871 4.615-11.517 10.527h-6.596c-.646 0-1.306.534-1.306 1.183l-2.581 36.845c0 .724.513 1.457 1.291 1.457h41.419c.73 0 1.29-.604 1.29-1.457zm-19.419-9.071c4.518 0 8.289 3.417 8.936 7.888h-17.87c.659-4.47 4.402-7.888 8.934-7.888zm-16.952 10.527h5.307v6.576c0 .793.516 1.312 1.291 1.312s1.291-.519 1.291-1.312v-6.576h18.127v6.576c0 .793.517 1.312 1.291 1.312.775 0 1.292-.519 1.292-1.312v-6.576h5.32l1.807 24.992h-37.403zm-2.323 34.22.516-6.604h37.662l.516 6.604z" fill="#fff" stroke="#fff" stroke-width=".4"/></svg>
             </div>
         </div>
@@ -208,9 +211,7 @@ function navbar() {
         <p>Sleepwear & Robes</p>
         <p>Shapewear</p>
     </div>
-</div>`
+</div>`;
 }
 
 export default navbar;
-
-

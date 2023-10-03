@@ -1,262 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="icon" href="https://www.tatacliq.com/favicon.ico" type="png">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <link rel="icon" href="https://www.tatacliq.com/favicon.ico" type="png" />
+    <title>SignUp - Tata CLiQ</title>
+    <link rel="icon" href="https://www.tatacliq.com/favicon.ico" type="png" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-        #box1 {
-            display: none;
-        }
+      @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+      #box1 {
+        display: none;
+      }
 
-        #container {
-            display: flex;
-            flex-direction: column;
-            max-width: 450px;
-            height: 622px;
-            margin: auto;
-            margin-top: 60px;
-            border-radius: 45px;
-            font-family: sans-serif;
-            background: white;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        }
+      #container {
+        display: flex;
+        flex-direction: column;
+        max-width: 450px;
+        height: 622px;
+        margin: auto;
+        margin-top: 60px;
+        border-radius: 45px;
+        font-family: sans-serif;
+        background: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
 
-        #wel {
-            text-align: center;
-            line-height: 76%;
-        }
+      #wel {
+        text-align: center;
+        line-height: 76%;
+      }
 
-        #mob,
-        #em {
-            color: crimson;
-            cursor: pointer;
-        }
+      #mob,
+      #em {
+        color: crimson;
+        cursor: pointer;
+      }
 
-        a {
-            text-decoration: none;
-            color: crimson;
-            font-weight: bold;
-        }
+      a {
+        text-decoration: none;
+        color: crimson;
+        font-weight: bold;
+      }
 
-        body {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-        #fieldset {
-            position: relative;
-            height: 35px;
-            width: 78%;
-            margin-left: 10%;
-            margin-bottom: 17px;
-            display: flex;
-        }
+      #fieldset {
+        position: relative;
+        height: 35px;
+        width: 78%;
+        margin-left: 10%;
+        margin-bottom: 17px;
+        display: flex;
+      }
 
-        #mobile {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            height: 100%;
-            width: 67%;
-            border: 1px solid lightgray;
-            font-size: 16px;
-            padding: 0 60px;
-            outline: none;
-            background: none;
-            border-radius: 5pxs;
-            z-index: 1;
-        }
+      #mobile {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 67%;
+        border: 1px solid lightgray;
+        font-size: 16px;
+        padding: 0 60px;
+        outline: none;
+        background: none;
+        border-radius: 5pxs;
+        z-index: 1;
+      }
 
-        #email {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            height: 100%;
-            width: 89%;
-            border: 1px solid lightgray;
-            font-size: 16px;
-            padding: 0 20px;
-            outline: none;
-            background: none;
-            z-index: 1;
-        }
+      #email {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 89%;
+        border: 1px solid lightgray;
+        font-size: 16px;
+        padding: 0 20px;
+        outline: none;
+        background: none;
+        z-index: 1;
+      }
 
-        .label {
-            position: absolute;
-            top: 10px;
-            padding: 0 4px;
-            background-color: white;
-            color: lightgray;
-            font-size: 16px;
-            transition: 0.5s;
-            z-index: 0;
-        }
+      .label {
+        position: absolute;
+        top: 10px;
+        padding: 0 4px;
+        background-color: white;
+        color: lightgray;
+        font-size: 16px;
+        transition: 0.5s;
+        z-index: 0;
+      }
 
-        #left {
-            left: 65px;
-        }
+      #left {
+        left: 65px;
+      }
 
-        #right {
-            left: 20px;
-        }
+      #right {
+        left: 20px;
+      }
 
-        input {
-            float: left;
-        }
+      input {
+        float: left;
+      }
 
-        input::placeholder {
-            color: transparent;
-        }
+      input::placeholder {
+        color: transparent;
+      }
 
-        #mobile:focus+.label {
-            top: -10px;
-            z-index: 10;
-            margin-left: -50px;
-            font-size: 14px;
-            color: lightgrey;
-        }
+      #mobile:focus + .label {
+        top: -10px;
+        z-index: 10;
+        margin-left: -50px;
+        font-size: 14px;
+        color: lightgrey;
+      }
 
-        #email:focus+.label {
-            top: -10px;
-            z-index: 10;
-            margin-left: -5px;
-            font-size: 14px;
-            color: lightgrey;
-        }
+      #email:focus + .label {
+        top: -10px;
+        z-index: 10;
+        margin-left: -5px;
+        font-size: 14px;
+        color: lightgrey;
+      }
 
-        .dot {
-            width: 30px;
-            margin-left: 15px;
-            text-align: center;
-            padding-top: 6px;
-            font-size: 20px;
-        }
+      .dot {
+        width: 30px;
+        margin-left: 15px;
+        text-align: center;
+        padding-top: 6px;
+        font-size: 20px;
+      }
 
-        #close_btn {
-            background: white;
-            font-size: 26px;
-            border: none;
-            margin: 20px;
-            cursor: pointer;
-            outline: none;
-        }
+      #close_btn {
+        background: white;
+        font-size: 26px;
+        border: none;
+        margin: 20px;
+        cursor: pointer;
+        outline: none;
+      }
 
-        .center {
-            text-align: center;
-        }
+      .center {
+        text-align: center;
+      }
 
-        #container>p {
-            margin: auto;
-            width: 75%;
-            font-size: 14px;
-        }
+      #container > p {
+        margin: auto;
+        width: 75%;
+        font-size: 14px;
+      }
 
-        .button {
-          
-            margin: auto;
-            margin-top: 5px;
-            border-radius: 15px;
-            font-size: 18px;
-            color: #fff;
-            text-align: center;
-            border: 0;
-            outline: none;
-            padding: 13px 15px;
-            background-image: linear-gradient(to bottom right, #89216b, #da4453);
-            cursor: pointer;
-            width: 101%;
-    height: 13%;
-        }
+      .button {
+        margin: auto;
+        margin-top: 5px;
+        border-radius: 15px;
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        border: 0;
+        outline: none;
+        padding: 13px 15px;
+        background-image: linear-gradient(to bottom right, #89216b, #da4453);
+        cursor: pointer;
+        width: 101%;
+        height: 13%;
+      }
 
-        .btnEn {
-            width: 80%;
-            border-radius: 15px;
-            font-size: 18px;
-            color: #fff;
-            text-align: center;
-            border: 0;
-            outline: none;
-            padding: 13px 15px;
-            background-image: linear-gradient(to bottom right, #89216b, #da4453);
-            box-shadow: 0 28px 18px -23px #da4453;
-            cursor: pointer;
-        }
+      .btnEn {
+        width: 80%;
+        border-radius: 15px;
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        border: 0;
+        outline: none;
+        padding: 13px 15px;
+        background-image: linear-gradient(to bottom right, #89216b, #da4453);
+        box-shadow: 0 28px 18px -23px #da4453;
+        cursor: pointer;
+      }
 
-        .delBtn {
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-        }
+      .delBtn {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+      }
 
-        form {
-            margin: 0 auto;
-        }
+      form {
+        margin: 0 auto;
+      }
 
-        #reg_link{
-            border: 1px solid transparent;
-            text-align: center;
-            color: rgb(223,50,100);
-            font-weight: bolder;
-            letter-spacing: 2px;
-        }
+      #reg_link {
+        border: 1px solid transparent;
+        text-align: center;
+        color: rgb(223, 50, 100);
+        font-weight: bolder;
+        letter-spacing: 2px;
+      }
 
-        input{
-            width: 350px;
-            height: 28px;
-            border-style: none;
-            border:1px solid black;
-            border-color: lightgray;
-            border-radius: 4px;
-        }
+      input {
+        width: 350px;
+        height: 28px;
+        border-style: none;
+        border: 1px solid black;
+        border-color: lightgray;
+        border-radius: 4px;
+      }
 
-        input:focus {
-            outline: none;
-        }
+      input:focus {
+        outline: none;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="container">
-        <div class="delBtn">
-            <button id="close_btn"><i class="fas fa-times"></i></button>
-        </div>
+      <div class="delBtn">
+        <button id="close_btn"><i class="fas fa-times"></i></button>
+      </div>
 
-        <div id="wel">
-            <h1>Welcome to Tata</h1>
-            <h1>CLiQ</h1>
-        </div>
+      <div id="wel">
+        <h1>Welcome to Tata</h1>
+        <h1>CLiQ</h1>
+      </div>
 
-        <!--  Email details -->
-        <form action="/login" method="post">
-            <label for="first_name">First Name</label><br>
-            <br>
-            <input type="text" name="first_name" value=""><br>
-            <br>
-            <label for="last_name">Last Name</label><br>
-            <br>
-            <input type="text" name="last_name" value=""><br>
-            <br>
-            <label for="email">Email</label><br>
-            <br>
-            <input type="email" name="email" value=""><br>
-            <br>
-            <label for="password">password</label><br>
-            <br>
-            <input type="password" name="password" value=""><br>
-            <br>
-            <input class="button" type="submit" value="Continue">
-            <!-- <button class="button" disabled>Continue</button> -->
-        </form>
-        <!-- Mobile number details -->
-        <!-- <div id="box2">
+      <!--  Email details -->
+      <form action="/login" method="post">
+        <label for="first_name">First Name</label><br />
+        <br />
+        <input type="text" name="first_name" value="" /><br />
+        <br />
+        <label for="last_name">Last Name</label><br />
+        <br />
+        <input type="text" name="last_name" value="" /><br />
+        <br />
+        <label for="email">Email</label><br />
+        <br />
+        <input type="email" name="email" value="" /><br />
+        <br />
+        <label for="password">password</label><br />
+        <br />
+        <input type="password" name="password" value="" /><br />
+        <br />
+        <input class="button" type="submit" value="Continue" />
+        <!-- <button class="button" disabled>Continue</button> -->
+      </form>
+      <!-- Mobile number details -->
+      <!-- <div id="box2">
             <p class="center">Please enter your Mobile Number</p>
             <div id="fieldset">
                 <div class="dot">+91</div>
@@ -266,18 +269,15 @@
             </div>
             <h3 id="mob" class="center" onclick="displayEmail()">Use Email Address</h3>
         </div> -->
-       <!-- Terms and condition -->
-        <p>By continue you are agree to our
-            <a href="#" class="">Terms of Service</a> &
-            <a href="#" class="">Privacy Policy</a>
-        </p>
-        <!-- button -->
-        
-        <a href="/login"><p id="reg_link">Sign In</p></a>
-        
+      <!-- Terms and condition -->
+      <p>
+        By continue you are agree to our
+        <a href="#" class="">Terms of Service</a> &
+        <a href="#" class="">Privacy Policy</a>
+      </p>
+      <!-- button -->
+
+      <a href="/login"><p id="reg_link">Sign In</p></a>
     </div>
-    
-</body>
-
+  </body>
 </html>
-
