@@ -235,8 +235,9 @@
         subSum += arr[ind].discontPrice;
         document.querySelector(".price").textContent = "₹" + " " + sum;
         document.querySelector(".totalPrice").textContent =
-          "₹" + " " + (subSum + 49);
-        document.querySelector(".sub").textContent = "₹" + " " + (sum + 49);
+          "₹" + " " + (subSum + shipping);
+        document.querySelector(".sub").textContent =
+          "₹" + " " + (sum + shipping);
         document.querySelector(".dis").textContent =
           "-₹" + " " + (subSum - sum);
         document.querySelector(".dis2").textContent =
@@ -259,8 +260,9 @@
           subSum -= arr[ind].discontPrice;
           document.querySelector(".price").textContent = "₹" + " " + sum;
           document.querySelector(".totalPrice").textContent =
-            "₹" + " " + (sum + 49);
-          document.querySelector(".sub").textContent = "₹" + " " + subSum;
+            "₹" + " " + (subSum + shipping);
+          document.querySelector(".sub").textContent =
+            "₹" + " " + (sum + shipping);
           document.querySelector(".dis").textContent =
             "₹" + " " + (subSum - sum);
           document.querySelector(".dis2").textContent =
@@ -292,7 +294,7 @@
     document.querySelector(".price").textContent = "₹" + " " + sum;
     document.querySelector(".totalPrice").textContent =
       "₹" + " " + (subSum + 49);
-    document.querySelector(".sub").textContent = "₹" + " " + sum + shipping;
+    document.querySelector(".sub").textContent = "₹" + " " + (sum + shipping);
     document.querySelector(".dis").textContent = "₹" + " " + (subSum - sum);
     document.querySelector(".dis2").textContent = "₹" + " " + (subSum - sum);
 
