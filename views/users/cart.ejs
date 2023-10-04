@@ -284,9 +284,9 @@
       div2.append(para1, para2, para3, remove, bf, bs, bt);
       para1.innerText = elm.description;
       para3.innerText = "₹" + Number(elm.mainPrice);
-      para3.setAttribute("price", "main");
+      para3.setAttribute("class", "second");
       para2.innerText = "₹" + Number(elm.discontPrice);
-      para2.setAttribute("class", "second");
+      para2.setAttribute("price", "main");
 
       div1.append(img, div2);
       document.querySelector(".product").append(div1);
