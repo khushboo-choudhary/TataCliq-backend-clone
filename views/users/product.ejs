@@ -20,7 +20,9 @@
   </head>
   <body>
     <div id="navbar"></div>
+
     <!-- Main  -->
+    <div id="toast-container"></div>
     <div id="twobox">
       <div class="filter">
         <div class="fil1">
@@ -71,11 +73,55 @@
         </div>
         <% } %>
         <script>
+          // toast function
+          function showToast(message) {
+            const toastContainer = document.getElementById("toast-container");
+            const toast = document.createElement("div");
+            toast.classList.add("toast");
+            toast.innerText = message;
+            toastContainer.appendChild(toast);
+
+            setTimeout(() => {
+              toast.remove();
+            }, 3000); // Adjust the time (in milliseconds) for how long the toast is displayed
+          }
+
           let arr = JSON.parse(localStorage.getItem("cart_data")) || [];
+
+          // cart length function
+          function updateCartBadge() {
+            const cartLength =
+              JSON.parse(localStorage.getItem("cart_data"))?.length || 0;
+            // Update the badge text with the cart length
+            let badgeText = document.getElementById("badge-text");
+            if (badgeText) {
+              badgeText.textContent = cartLength; // Update text content
+              console.log("Updated cart length display.");
+            } else {
+              console.log("badge-text element not found.");
+            }
+          }
+          // Call the function to update cart badge initially
+          updateCartBadge();
+
+          // buy now click function
           function sendDataToCart(product) {
             product = JSON.parse(product);
-            arr.push(product);
+            product.quantity = 1;
+            // Check if the item is already in the cart
+            const existingItem = arr.find(
+              (cartItem) => cartItem._id === product._id
+            );
+            if (existingItem) {
+              // Update the quantity if the item is already in the cart
+              existingItem.quantity += 1;
+              showToast("Product Quantity increased to the cart!");
+            } else {
+              arr.push(product);
+              showToast("Product added to the cart!");
+            }
             localStorage.setItem("cart_data", JSON.stringify(arr));
+            updateCartBadge();
           }
         </script>
       </div>
@@ -95,9 +141,4 @@
   let foot = document.querySelector("#Foot_container");
 
   foot.innerHTML = footer();
-
-  // function sendDataToCart(product) {
-  //     product = JSON.parse(product);
-  //     console.log(product)
-  // }
 </script>

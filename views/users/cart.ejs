@@ -130,10 +130,28 @@
       color: white;
       font-size: bold;
     }
+
+    #toast-container {
+      position: fixed;
+      right: 20px;
+      top: 100px;
+      max-width: 300px;
+      z-index: 9999;
+    }
+
+    .toast {
+      background-color: purple;
+      color: #fff;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      display: block;
+    }
   </style>
   <body>
     <div id="navbar"></div>
     <h1>My Bag</h1>
+    <div id="toast-container"></div>
     <div class="main">
       <div class="product"></div>
       <div class="payment">
@@ -191,124 +209,134 @@
 </html>
 
 <script>
-  let arr = JSON.parse(localStorage.getItem("cart_data")) || [];
-  console.log(arr);
+  function showToast(message) {
+    const toastContainer = document.getElementById("toast-container");
+    const toast = document.createElement("div");
+    toast.classList.add("toast");
+    toast.innerText = message;
+    toastContainer.appendChild(toast);
 
+    setTimeout(() => {
+      toast.remove();
+    }, 3000); // Adjust the time (in milliseconds) for how long the toast is displayed
+  }
+  let arr = JSON.parse(localStorage.getItem("cart_data")) || [];
   display(arr);
 
-  document.querySelector(".ship").textContent = "₹" + " " + shipping;
   function display(arr) {
     let shipping = 49;
     let sum = 0;
     let subSum = 0;
     document.querySelector(".product").innerHTML = "";
     arr.map(function (elm, ind) {
-      // let sum = arr[ind].mainPrice.reduce((prev, curr) =>
-      //     Number(prev) + Number(curr),0)
-      // console.log(arr[ind].mainPrice)
-
-      sum += Number(arr[ind].mainPrice);
-      subSum += Number(arr[ind].discontPrice);
-      console.log(sum);
-      const div1 = document.createElement("div");
-      div1.setAttribute("class", "box-2");
-      const img = document.createElement("img");
-      img.src = elm.image;
-      const para1 = document.createElement("div");
-      const para2 = document.createElement("p");
-      const para3 = document.createElement("p");
-      const remove = document.createElement("div");
-      const bf = document.createElement("div");
-      bf.setAttribute("class", "bf");
-      bf.innerHTML = "-";
-      const bs = document.createElement("div");
-      bs.setAttribute("class", "bf");
-      let count = 1;
-      const bt = document.createElement("div");
-      bs.textContent = count;
-      bt.setAttribute("class", "bf");
-      bt.textContent = "+";
-
-      bt.addEventListener("click", function () {
-        count++;
-        sum += arr[ind].mainPrice;
-        subSum += arr[ind].discontPrice;
-        document.querySelector(".price").textContent = "₹" + " " + sum;
-        document.querySelector(".totalPrice").textContent =
-          "₹" + " " + (subSum + shipping);
-        document.querySelector(".sub").textContent =
-          "₹" + " " + (sum + shipping);
-        document.querySelector(".dis").textContent =
-          "-₹" + " " + (subSum - sum);
-        document.querySelector(".dis2").textContent =
-          "-₹" + " " + (subSum - sum);
-        // console.log(count)
+      if (elm) {
+        sum += Number(arr[ind].mainPrice) * Number(arr[ind].quantity);
+        subSum += Number(arr[ind].discontPrice) * Number(arr[ind].quantity);
+        console.log(sum);
+        const div1 = document.createElement("div");
+        div1.setAttribute("class", "box-2");
+        const img = document.createElement("img");
+        img.src = elm.image;
+        const para1 = document.createElement("div");
+        const para2 = document.createElement("p");
+        const para3 = document.createElement("p");
+        const remove = document.createElement("div");
+        const bf = document.createElement("div");
+        bf.setAttribute("class", "bf");
+        bf.innerHTML = "-";
+        const bs = document.createElement("div");
+        bs.setAttribute("class", "bf");
+        let count = elm.quantity;
+        const bt = document.createElement("div");
         bs.textContent = count;
-      });
+        bt.setAttribute("class", "bf");
+        bt.textContent = "+";
 
-      bf.addEventListener("click", function () {
-        if (count == 1) {
-          arr.splice(ind, 1);
-          localStorage.setItem("cart_data", JSON.stringify(arr));
-          display(arr);
-          sum -= arr[ind].mainPrice;
-          subSum -= arr[ind].discontPrice;
-          bs.textContent = 0;
-        } else {
-          count--;
-          sum -= arr[ind].mainPrice;
-          subSum -= arr[ind].discontPrice;
+        bt.addEventListener("click", function () {
+          count++;
+          console.log("chekin", count, arr);
+          sum += Number(arr[ind].mainPrice);
+          subSum += Number(arr[ind].discontPrice);
           document.querySelector(".price").textContent = "₹" + " " + sum;
           document.querySelector(".totalPrice").textContent =
-            "₹" + " " + (subSum + shipping);
-          document.querySelector(".sub").textContent =
-            "₹" + " " + (sum + shipping);
+            "₹" + " " + (subSum + 49);
+          document.querySelector(".sub").textContent = "₹" + " " + (sum + 49);
           document.querySelector(".dis").textContent =
             "₹" + " " + (subSum - sum);
           document.querySelector(".dis2").textContent =
-            "₹" + " " + (subSum - sum);
+            "₹" + " " + -(subSum - sum);
           bs.textContent = count;
-        }
-      });
-      const div2 = document.createElement("div");
+          arr[ind].quantity = count;
+          localStorage.setItem("cart_data", JSON.stringify(arr));
+          showToast("Product Quantity increased from the cart!");
+        });
 
-      remove.addEventListener("click", function () {
-        arr.splice(ind, 1);
-        localStorage.setItem("cart_data", JSON.stringify(arr));
-        display(arr);
-      });
+        bf.addEventListener("click", function () {
+          if (count == 1) {
+            arr.splice(ind, 1);
+            localStorage.setItem("cart_data", JSON.stringify(arr));
+            display(arr);
+            sum -= Number(arr[ind].mainPrice);
+            subSum -= Number(arr[ind].discontPrice);
+            bs.textContent = 0;
+          } else {
+            count--;
+            sum -= Number(arr[ind].mainPrice);
+            subSum -= Number(arr[ind].discontPrice);
+            document.querySelector(".price").textContent = "₹" + " " + sum;
+            document.querySelector(".totalPrice").textContent =
+              "₹" + " " + (subSum + 49);
+            document.querySelector(".sub").textContent =
+              "₹" + " " + (sum + shipping);
+            document.querySelector(".dis").textContent =
+              "₹" + " " + (subSum - sum);
+            document.querySelector(".dis2").textContent =
+              "₹" + " " + -(subSum - sum);
+            bs.textContent = count;
+            arr[ind].quantity = count;
+            localStorage.setItem("cart_data", JSON.stringify(arr));
+            showToast("Product Quantity decreased from the cart!");
+          }
+        });
+        const div2 = document.createElement("div");
 
-      remove.setAttribute("class", "remove");
-      remove.innerText = "Remove";
+        remove.addEventListener("click", function () {
+          arr.splice(ind, 1);
+          localStorage.setItem("cart_data", JSON.stringify(arr));
+          showToast("Product Removed from the cart!");
+          display(arr);
+        });
 
-      div2.append(para1, para2, para3, remove, bf, bs, bt);
-      para1.innerText = elm.description;
-      para3.innerText = "₹" + Number(elm.mainPrice);
-      para3.setAttribute("class", "second");
-      para2.innerText = "₹" + Number(elm.discontPrice);
-      para2.setAttribute("price", "main");
+        remove.setAttribute("class", "remove");
+        remove.innerText = "Remove";
 
-      div1.append(img, div2);
-      document.querySelector(".product").append(div1);
+        div2.append(para1, para2, para3, remove, bf, bs, bt);
+        para1.innerText = elm.description;
+        para3.innerText = "₹" + Number(elm.mainPrice);
+        para3.setAttribute("class", "second");
+        para2.innerText = "₹" + Number(elm.discontPrice);
+        para2.setAttribute("price", "main");
+
+        div1.append(img, div2);
+        document.querySelector(".product").append(div1);
+      }
     });
     document.querySelector(".price").textContent = "₹" + " " + sum;
     document.querySelector(".totalPrice").textContent =
       "₹" + " " + (subSum + 49);
-    document.querySelector(".sub").textContent = "₹" + " " + (sum + shipping);
+    document.querySelector(".sub").textContent = "₹" + " " + (sum + 49);
     document.querySelector(".dis").textContent = "₹" + " " + (subSum - sum);
-    document.querySelector(".dis2").textContent = "₹" + " " + (subSum - sum);
+    document.querySelector(".dis2").textContent = "₹" + " " + -(subSum - sum);
 
-    if (arr.length == 0) {
+    if (arr.length === 0) {
       shipping = 0;
       document.querySelector(".ship").textContent = "₹" + " " + shipping;
       document.querySelector(".totalPrice").textContent = "₹" + " " + 0;
+      document.querySelector(".sub").textContent = "₹" + " " + shipping;
       // return;
     } else {
       shipping = 49;
       document.querySelector(".ship").textContent = "₹" + " " + shipping;
     }
   }
-
-  document.querySelector(".totalPrice").textContent =
-    "₹" + " " + (subSum + shipping);
 </script>

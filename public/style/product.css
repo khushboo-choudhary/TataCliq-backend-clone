@@ -19,6 +19,24 @@ a {
     text-decoration: none;
 }
 
+#toast-container {
+  position: fixed;
+  right: 20px;
+  top: 100px;
+  max-width: 300px;
+  z-index: 9999;
+}
+
+.toast {
+  background-color: purple;
+  color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+
 .main-text {
     margin: 6px 0;
     letter-spacing: .2px;
