@@ -4,7 +4,7 @@ const app = express();
 require("dotenv").config();
 const passport = require("./configs/google_oauth");
 const productapiController = require("../src/controller/productapi.controller");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 2345;
 //for form work
 app.use(
   express.urlencoded({
@@ -37,8 +37,9 @@ app.get(
     failureRedirect: "/auth/google/failure",
   }),
   (req, res) => {
-    res.render("users/index.ejs");
-    console.log("nbbhjbhjgffytyttss", req);
+    const { first_name, last_name } = req.user;
+    let displayName = first_name + " " + last_name;
+    return res.render("users/index.ejs", { displayName });
   }
 );
 
@@ -50,7 +51,10 @@ app.use("/login", async (req, res) => {
 });
 
 app.get("/", async (req, res) => {
-  return res.render("users/index.ejs");
+  const displayName = req.user
+    ? req.user.first_name + " " + req.user.last_name
+    : null;
+  return res.render("users/index.ejs", { displayName });
 });
 
 app.get("/thankyou", async (req, res) => {
@@ -69,22 +73,13 @@ app.use("/signup", async (req, res) => {
   return res.render("users/signup.ejs");
 });
 
-// app.use("/",async (req,res) =>{
-//   return res.render("users/index.ejs");
-//  })
-// app.get("/",async (req,res) =>{
-//   return res.render("users/index.ejs");
-//  })
-
-//  app.get('/', function (req, res) { return res.redirect('/index.ejs') });
-
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.listen(port, async () => {
   try {
     connect();
-    console.log("Listening Port 5000");
+    console.log("Listening Port 2345");
   } catch (err) {
     console.log(err.message);
   }
