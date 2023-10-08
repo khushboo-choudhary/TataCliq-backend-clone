@@ -10,7 +10,7 @@ passport.use(
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: "https://tatacliq-website.onrender.com/",
-      // callbackURL: "https://dry-refuge-47566.herokuapp.com/",
+      // callbackURL: "http://localhost:2345/auth/google/callback",
       passReqToCallback: true,
     },
 
@@ -25,13 +25,13 @@ passport.use(
           password: uuidv4(),
         });
       }
-
+      // res.send(user);
       //   console.log(user);
       // User.findOrCreate({ googleId: profile.id }, function (err, user) {
       //   return done(err, user);
       // });
 
-      console.log("user", user);
+      // console.log("user", user);
       return done(null, user);
     }
   )
