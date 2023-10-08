@@ -1,268 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="https://www.tatacliq.com/favicon.ico" type="png" />
-    <title>Shopping Cart - Tata CLiQ</title>
-    <link rel="stylesheet" href="./style/navbar.css" />
-  </head>
-  <style>
-    body {
-      background-color: rgb(209, 209, 209);
-    }
-    h1 {
-      width: 100%;
-      background-color: #fff;
-      padding: 17px 0;
-      padding-left: 34px;
-    }
 
-    img {
-      width: 120px;
-      height: 120px;
-      margin: 20px;
-    }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://www.tatacliq.com/favicon.ico" type="png" />
+  <title>Shopping Cart - Tata CLiQ</title>
+  <link rel="stylesheet" href="./style/navbar.css" />
+</head>
+<style>
+  body {
+    background-color: rgb(209, 209, 209);
+  }
 
-    .product {
-      width: 60%;
-      min-height: 200px;
-    }
+  h1 {
+    width: 100%;
+    background-color: #fff;
+    padding: 17px 0;
+    padding-left: 34px;
+  }
 
-    .box-2 {
-      width: 80%;
-      height: 250px;
-      display: flex;
-      background-color: #fff;
-      border-radius: 5px;
-      margin: 30px;
-      display: flex;
-      align-items: center;
-    }
+  img {
+    width: 120px;
+    height: 120px;
+    margin: 20px;
+  }
 
-    p {
-      display: inline-block;
-      margin-right: 15px;
-      margin-top: 15px;
-    }
+  .product {
+    width: 60%;
+    min-height: 200px;
+  }
 
-    .second {
-      text-decoration: line-through;
-      color: rgb(129, 129, 129);
-    }
+  .box-2 {
+    width: 80%;
+    height: 250px;
+    display: flex;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 30px;
+    display: flex;
+    align-items: center;
+  }
 
-    .remove {
-      font-size: 16px;
-      border-top: 1px solid black;
-      margin-top: 12px;
-      padding-top: 5px;
-      cursor: pointer;
-    }
+  .secondp p,
+  .product p {
+    display: inline-block;
+    margin-right: 15px;
+    margin-top: 15px;
+  }
 
-    .bf {
-      display: inline-block;
-      width: 30px;
-      padding: 5px 0;
-      background-color: rgb(214, 197, 197);
-      margin: 2px;
-      margin-top: 10px;
-      text-align: center;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+  .second {
+    text-decoration: line-through;
+    color: rgb(129, 129, 129);
+  }
 
-    .payment {
-      text-align: center;
-      margin-top: 30px;
-      width: 360px;
-      height: 420px;
-      margin-right: 60px;
-      background-color: #fff;
-      border-radius: 5px;
-      position: fixed;
-      z-index: 100;
-      right: 0;
-      top: 180px;
-    }
+  .remove {
+    font-size: 16px;
+    border-top: 1px solid black;
+    margin-top: 12px;
+    padding-top: 5px;
+    cursor: pointer;
+  }
 
-    .main {
-      display: flex;
-    }
+  .bf {
+    display: inline-block;
+    width: 30px;
+    padding: 5px 0;
+    background-color: rgb(214, 197, 197);
+    margin: 2px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
 
-    .firstp {
-      margin: 10px;
-      padding-bottom: 10px;
-      border-bottom: 2.5px dotted rgb(206, 204, 204);
-    }
+  .payment {
+    text-align: center;
+    margin-top: 30px;
+    width: 360px;
+    height: 420px;
+    margin-right: 60px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    top: 180px;
+  }
 
-    .secondp {
-      text-align: left;
-      padding-left: 30px;
-      padding-right: 30px;
-    }
+  .main {
+    display: flex;
+  }
 
-    .flex1 {
-      display: flex;
-      justify-content: space-between;
-    }
+  .firstp {
+    margin: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2.5px dotted rgb(206, 204, 204);
+  }
 
-    .final {
-      margin-top: 20px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgb(156, 155, 155);
-    }
+  .secondp {
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 
-    .total {
-      display: flex;
-      justify-content: space-between;
-    }
+  .flex1 {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    .checkout {
-      width: 150px;
-      height: 40px;
-      border-radius: 20px;
-      background-color: rgb(255, 23, 68);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: bold;
-    }
+  .final {
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(156, 155, 155);
+  }
 
-    #toast-container {
-      position: fixed;
-      right: 20px;
-      top: 100px;
-      max-width: 300px;
-      z-index: 9999;
-    }
+  .total {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    .toast {
-      background-color: purple;
-      color: #fff;
-      padding: 15px;
-      border-radius: 5px;
-      margin-bottom: 10px;
-      display: block;
-    }
-    /* Add styles to center the empty cart image and message */
-    #emptyCartImageContainer {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 20px;
-      margin-left: 500px;
-    }
+  .checkout {
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(255, 23, 68);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: bold;
+    text-align: center;
+    /* display: inline-block; */
+    margin-right: 15px;
+    padding-top: 10px;
+  }
 
-    #emptyCartImageContainer img {
-      width: 500px;
-      height: 350px;
-      object-fit: cover;
-    }
+  #toast-container {
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    max-width: 300px;
+    z-index: 9999;
+  }
 
-    #emptyCartImageContainer p {
-      font-size: 25px;
-      color: red;
-      font-weight: bolder;
-      margin-bottom: 10px;
-      margin-left: 200px;
-      text-align: center;
-    }
+  .toast {
+    background-color: purple;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: block;
+  }
 
-    /* Adjust layout when cart is empty */
-    #productContainer {
-      display: flex;
-      flex-direction: column;
-    }
+  /* Add styles to center the empty cart image and message */
+  #emptyCartImageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 500px;
+  }
 
-    #emptyCartImageContainer {
-      display: none; /* Initially hide the empty cart message */
-    }
+  #emptyCartImageContainer img {
+    width: 500px;
+    height: 350px;
+    object-fit: cover;
+  }
 
-    #continuebtn {
-      background-color: #ff1744;
-      padding: 20px;
-      color: white;
-      font-size: 20px;
-      font-weight: bolder;
-      border-radius: 20px;
-      border: none;
-      margin-left: 200px;
-    }
-    #continuebtn:hover {
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    }
-  </style>
-  <body>
-    <div id="navbar"></div>
-    <h1>My Bag</h1>
-    <div id="toast-container"></div>
-    <div class="main">
-      <div class="product" id="productContainer"></div>
-      <div id="emptyCartImageContainer">
-        <img
-          src="https://as2.ftcdn.net/v2/jpg/01/02/71/19/1000_F_102711930_V8YtaT6QNjVF8ftHk2pmlKRhakLw1cyN.jpg"
-          alt="Empty Bag Image"
-        />
-        <div><p>Your Cart is Empty</p></div>
-        <button id="continuebtn">Continue Shopping</button>
+  #emptyCartImageContainer p {
+    font-size: 25px;
+    color: red;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    margin-left: 200px;
+    text-align: center;
+  }
+
+  /* Adjust layout when cart is empty */
+  #productContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #emptyCartImageContainer {
+    display: none;
+    /* Initially hide the empty cart message */
+  }
+
+  #continuebtn {
+    background-color: #ff1744;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    border-radius: 20px;
+    border: none;
+    margin-left: 200px;
+  }
+
+  #continuebtn:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+</style>
+
+<body>
+  <div id="navbar"></div>
+  <h1>My Bag</h1>
+  <div id="toast-container"></div>
+  <div class="main">
+    <div class="product" id="productContainer"></div>
+    <div id="emptyCartImageContainer">
+      <img src="https://as2.ftcdn.net/v2/jpg/01/02/71/19/1000_F_102711930_V8YtaT6QNjVF8ftHk2pmlKRhakLw1cyN.jpg"
+        alt="Empty Bag Image" />
+      <div>
+        <p>Your Cart is Empty</p>
       </div>
-      <div class="payment">
-        <div class="firstp">
-          Some items in your order are eligible<br />
-          for
-          <span style="color: green; font-size: 16px; font-weight: bold"
-            >FREE</span
-          >
-          Shipping! Check
-          <span
-            style="color: rgb(235, 29, 63); font-size: 16px; font-weight: bold"
-            >cart <br />
-            summary</span
-          >
-          for the final amount
+      <button id="continuebtn">Continue Shopping</button>
+    </div>
+    <div class="payment">
+      <div class="firstp">
+        Some items in your order are eligible<br />
+        for
+        <span style="color: green; font-size: 16px; font-weight: bold">FREE</span>
+        Shipping! Check
+        <span style="color: rgb(235, 29, 63); font-size: 16px; font-weight: bold">cart <br />
+          summary</span>
+        for the final amount
+      </div>
+
+      <div class="secondp">
+        <div class="flex1">
+          <p>Bag Total</p>
+          <p class="price">0</p>
+        </div>
+        <div class="flex1">
+          <p>Shipping Charge</p>
+          <p class="ship">0</p>
+        </div>
+        <div class="flex1">
+          <p>Bag Subtotal</p>
+          <p class="sub">0</p>
+        </div>
+        <div class="flex1">
+          <p>Product Discount(s)</p>
+          <p class="dis">0</p>
+        </div>
+        <div class="final">
+          <p style="color: green">
+            You will save <span class="dis2">0</span> on this order
+          </p>
+          <!-- Product Discount(s) -->
         </div>
 
-        <div class="secondp">
-          <div class="flex1">
-            <p>Bag Total</p>
-            <p class="price">0</p>
+        <div class="total">
+          <div>
+            <p>Total</p>
+            <p class="totalPrice">0</p>
           </div>
-          <div class="flex1">
-            <p>Shipping Charge</p>
-            <p class="ship">0</p>
-          </div>
-          <div class="flex1">
-            <p>Bag Subtotal</p>
-            <p class="sub">0</p>
-          </div>
-          <div class="flex1">
-            <p>Product Discount(s)</p>
-            <p class="dis">0</p>
-          </div>
-          <div class="final">
-            <p style="color: green">
-              You will save <span class="dis2">0</span> on this order
-            </p>
-            <!-- Product Discount(s) -->
-          </div>
-
-          <div class="total">
-            <div>
-              <p>Total</p>
-              <p class="totalPrice">0</p>
-            </div>
-            <a href="/checkout"><p class="checkout">Checkout</p></a>
-          </div>
+          <a href="/checkout">
+            <p class="checkout">Checkout</p>
+          </a>
         </div>
       </div>
     </div>
-  </body>
-  <script src="/script/navmain.js" type="module"></script>
+  </div>
+</body>
+<script src="/script/navmain.js" type="module"></script>
+
 </html>
 
 <script>
