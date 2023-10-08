@@ -20,7 +20,6 @@
     <div id="all">
     <div id="ravmain">
     <div id="navbar">
-        
     </div>
 
     <div>
@@ -153,16 +152,19 @@
 
 <script type="module">
     import deliveryOfData from '/script/data.js';
-
     import footer from '/script/footer.js';
     let foot = document.querySelector('#Foot_container');
-
     foot.innerHTML = footer();
-
     let url = deliveryOfData();
-    // console.log(url.line1[0]);
-    console.log('saurav',url)
-for(let i = 0; i <= 3; i++) {
+  // Pass the display name to the navmain.js module
+    import navMain from '/script/navmain.js';
+
+    // Get the display name from the HTML
+    const displayName = '<%= displayName %>';
+
+    // Call the navMain function with the display name
+    navMain(displayName);
+    for(let i = 0; i <= 3; i++) {
     let div1 = document.createElement('div');
     div1.setAttribute('class', 'ravgrid11');
     let img1 = document.createElement('img');
@@ -242,8 +244,7 @@ for(let i = 0; i <= 3; i++) {
     img10.src = url.line17[i];
     document.querySelector('#ravgrid10').append(div10);
     div10.append(img10)
-}
-
+}   
 document.querySelector('#ravgrid1').addEventListener('click', function() {
     window.location.href = '/products'
 })

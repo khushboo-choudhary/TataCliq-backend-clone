@@ -45,6 +45,22 @@ document.querySelector(".two4").addEventListener("click", function () {
   window.location.href = "/cart";
 });
 
+// navmain.js
+export default function navMain(displayName) {
+  // Update the Google link text
+  let google = document.querySelector("#googleName");
+  if (google) {
+    if (displayName) {
+      // If displayName is available, display it
+      google.innerHTML = `<p>Welcome, ${displayName}</p>`;
+    } else {
+      // If displayName is not available, show SignUp / SignIn
+      google.innerHTML =
+        '<img src="https://cdn-icons-png.flaticon.com/128/149/149071.png" width="15%" height="15%" id="avatar"/> &nbsp;&nbsp;SignUp / SignIn';
+    }
+  }
+}
+
 function updateCartBadge() {
   const cartLength = JSON.parse(localStorage.getItem("cart_data"))?.length || 0;
 

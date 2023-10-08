@@ -46,16 +46,6 @@ a {
     color: #fff;
 }
 
-#uldesign {
-    list-style: none;
-    display: flex;
-}
-
-#uldesign li {
-    margin-right: 40px;
-    cursor: pointer;
-}
-
 .rav2 p:hover {
     color: red;
     cursor: pointer;
@@ -77,16 +67,56 @@ a {
 }
 
 .ravone1 {
-    width: 20%;
-    cursor: pointer;
+        width: 20%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        color: white;
+        font-weight: bold;
 }
 
-.ravone2  {
-    width: 90%;
+.ravone1:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.ravone2 {
+    width: 80%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
+#uldesign {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+#uldesign li {
+    margin-top: 0;
+    margin-right: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+#uldesign li:last-child {
+    margin-right: 0;
+}
+
+#uldesign li a {
+    color: white;
+    text-decoration: none;
+}
+
+#uldesign li a:hover {
+    color: red;
+}
+
+#googleName {
+    display: flex;
+    align-items: center;
+}
 #ravnavtwotwo {
     height: 65%;
     /* background-color: black; */

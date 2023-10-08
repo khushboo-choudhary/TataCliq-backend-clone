@@ -16,8 +16,8 @@ function navbar() {
                 <ul id="uldesign">
                     <li>CLiQ Cash</li>
                     <li>Gift Card</li>
-                    <li>CLiQ Care</li>
-                    <li ><a style="color:white ; text-decoration:none" href ="/login">SignUp / SignIn</a></li>
+                    <li>CLiQ Care</li>                 
+                    <li><a style="color:white ; text-decoration:none" id="googleName" href ="/login"></a></li>
                 </ul>
             </div>
         </div>
