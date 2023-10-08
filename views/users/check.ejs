@@ -1,486 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="https://www.tatacliq.com/favicon.ico" type="png" />
-    <title>Checkout Page - Tata CLiQ</title>
-    <link rel="stylesheet" href="/style/navbar.css" />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
-      }
 
-      body {
-        background-color: rgb(236, 236, 236);
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://www.tatacliq.com/favicon.ico" type="png" />
+  <title>Checkout Page - Tata CLiQ</title>
+  <link rel="stylesheet" href="/style/navbar.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
 
-      .container {
-        width: 80%;
-        min-height: 500px;
-        margin: auto;
-        position: relative;
-        background-color: rgb(236, 236, 236);
-      }
+    body {
+      background-color: rgb(236, 236, 236);
+    }
 
-      #head_check {
-        border: 1px solid transparent;
-      }
+    .container {
+      width: 80%;
+      min-height: 500px;
+      margin: auto;
+      position: relative;
+      background-color: rgb(236, 236, 236);
+    }
 
-      .form_div {
-        border: 1px solid transparent;
-        width: 100%;
-        height: 600px;
-        display: flex;
-        justify-content: space-between;
-      }
+    #head_check {
+      border: 1px solid transparent;
+    }
 
-      #form {
-        border: 1px solid transparent;
-        width: 65%;
-        height: 100%;
-      }
+    .form_div {
+      border: 1px solid transparent;
+      width: 100%;
+      height: 600px;
+      display: flex;
+      justify-content: space-between;
+    }
 
-      #total {
-        border: 1px solid transparent;
-        width: 30%;
-        height: 45%;
-      }
+    #form {
+      border: 1px solid transparent;
+      width: 65%;
+      height: 100%;
+    }
 
-      #ship_head {
-        border: 1px solid transparent;
-        padding: 13px;
-        display: flex;
-        justify-content: space-between;
-      }
+    #total {
+      border: 1px solid transparent;
+      width: 30%;
+      height: 45%;
+    }
 
-      #ship_head > h3 {
-        border: 1px solid transparent;
-        width: 40%;
-        height: 30px;
-        font-size: 16px;
-        color: #000000;
-      }
+    #ship_head {
+      border: 1px solid transparent;
+      padding: 13px;
+      display: flex;
+      justify-content: space-between;
+    }
 
-      #ship_head > p {
-        color: #212121;
-        cursor: pointer;
-        font-size: 14px;
-        text-decoration-line: underline;
-      }
+    #ship_head>h3 {
+      border: 1px solid transparent;
+      width: 40%;
+      height: 30px;
+      font-size: 16px;
+      color: #000000;
+    }
 
-      #first_name {
-        width: 169px;
-      }
+    #ship_head>p {
+      color: #212121;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration-line: underline;
+    }
 
-      #last_name {
-        width: 169px;
-      }
+    #first_name {
+      width: 169px;
+    }
 
-      #form {
-        padding: 13px;
-        border: 1px solid transparent;
-        height: 86%;
-        background-color: white;
-      }
+    #last_name {
+      width: 169px;
+    }
 
-      #add_form {
-        border-bottom: 1px solid #9e9d9d;
-        height: 70%;
-        background-color: white;
-      }
+    #form {
+      padding: 13px;
+      border: 1px solid transparent;
+      height: 86%;
+      background-color: white;
+    }
 
-      #pincode {
-        margin-left: 25px;
-        width: 249px;
-      }
+    #add_form {
+      border-bottom: 1px solid #9e9d9d;
+      height: 70%;
+      background-color: white;
+    }
 
-      input {
-        font-size: 14px;
-        height: 35px;
-        padding: 3px;
-        border-radius: 5px;
-        border: 1px;
-        border-color: #d2d2d2;
-        border-style: solid;
-      }
+    #pincode {
+      margin-left: 25px;
+      width: 249px;
+    }
 
-      #city {
-        margin-top: 0;
-        width: 352px;
-      }
+    input {
+      font-size: 14px;
+      height: 35px;
+      padding: 3px;
+      border-radius: 5px;
+      border: 1px;
+      border-color: #d2d2d2;
+      border-style: solid;
+    }
 
-      #full_address {
-        margin-left: 25px;
-        width: 249px;
-        height: 96px;
-        margin-top: 30px;
-        overflow-wrap: break-word;
-      }
+    #city {
+      margin-top: 0;
+      width: 352px;
+    }
 
-      #state {
-        width: 352px;
-        margin-top: 30px;
-      }
-      #city_state {
-        display: flex;
-        flex-direction: column;
-        margin-top: 30px;
-      }
-      #add {
-        display: flex;
-      }
-      #comp_add {
-        display: flex;
-        flex-direction: column;
-      }
-      #char_limit {
-        border: 1px solid transparent;
-        width: 378px;
-        margin-left: 25px;
-        font-size: 12px;
-        color: rgb(58, 56, 56);
-        margin-top: 3px;
-      }
-      #land {
-        margin-top: 30px;
-        width: 352px;
-        height: 42px;
-        border-color: #d2d2d2;
-        border-radius: 5px;
-      }
-      #land > option {
-        color: lightgray;
-      }
-      #phone_no {
-        margin-top: 23px;
-        width: 249px;
-        margin-left: 25px;
-      }
-      .btn {
-        display: flex;
-        flex-direction: row;
-        gap: 50px;
-      }
+    #full_address {
+      margin-left: 25px;
+      width: 249px;
+      height: 96px;
+      margin-top: 30px;
+      overflow-wrap: break-word;
+    }
 
-      #radio-option {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-      }
+    #state {
+      width: 352px;
+      margin-top: 30px;
+    }
 
-      .radio-label {
-        margin-left: 10px; /* Adjust the spacing between the radio button and label */
-      }
-      #home {
-        border: 1px solid transparent;
-        width: 50%;
-        height: 100%;
-      }
-      #office {
-        border: 1px solid transparent;
-        width: 50%;
-        height: 100%;
-      }
-      #hom {
-        margin-bottom: 6px;
-        border: 1px solid transparent;
-      }
-      #continue {
-        border: 1px solid transparent;
-        width: 40%;
-        height: 20%;
-        margin-left: 60%;
-        display: flex;
-        justify-content: space-around;
-        margin-top: 20px;
-      }
-      #button,
-      .cancelbtn {
-        width: 150px;
-        height: 40px;
-        border-radius: 20px;
-        background-color: rgb(255, 23, 68);
-        color: white;
-        font-size: 15px;
-        border: none;
-        cursor: pointer;
-      }
-      #continue > p {
-        color: rgb(255, 23, 68);
-        font-weight: bolder;
-        margin-top: 5px;
-        letter-spacing: 4px;
-      }
-      #total {
-        border: 1px solid black;
-        background-color: white;
-      }
-      .subtotal {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-        font-size: 14px;
-        color: #212121;
-      }
-      #color_green {
-        color: green;
-        border-bottom: 1px solid rgb(201, 199, 199);
-        height: 40px;
-        margin-top: 6px;
-      }
-      #one {
-        font-size: 20px;
-        font-weight: bolder;
-      }
-      #two {
-        font-size: 20px;
-      }
+    #city_state {
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+    }
 
-      .payment {
-        background-color: #fff;
-        border-radius: 10px;
-        width: 360px;
-        height: 420px;
-        padding: 20px;
-        margin: 20px;
-        text-align: center;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
+    #add {
+      display: flex;
+    }
 
-      .secondp {
-        /* display: flex;
+    #comp_add {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #char_limit {
+      border: 1px solid transparent;
+      width: 378px;
+      margin-left: 25px;
+      font-size: 12px;
+      color: rgb(58, 56, 56);
+      margin-top: 3px;
+    }
+
+    #land {
+      margin-top: 30px;
+      width: 352px;
+      height: 42px;
+      border-color: #d2d2d2;
+      border-radius: 5px;
+    }
+
+    #land>option {
+      color: lightgray;
+    }
+
+    #phone_no {
+      margin-top: 23px;
+      width: 249px;
+      margin-left: 25px;
+    }
+
+    .btn {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+    }
+
+    #radio-option {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .radio-label {
+      margin-left: 10px;
+      /* Adjust the spacing between the radio button and label */
+    }
+
+    #home {
+      border: 1px solid transparent;
+      width: 50%;
+      height: 100%;
+    }
+
+    #office {
+      border: 1px solid transparent;
+      width: 50%;
+      height: 100%;
+    }
+
+    #hom {
+      margin-bottom: 6px;
+      border: 1px solid transparent;
+    }
+
+    #continue {
+      border: 1px solid transparent;
+      width: 40%;
+      height: 20%;
+      margin-left: 60%;
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    #button,
+    .cancelbtn {
+      width: 150px;
+      height: 40px;
+      border-radius: 20px;
+      background-color: rgb(255, 23, 68);
+      color: white;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    #continue>p {
+      color: rgb(255, 23, 68);
+      font-weight: bolder;
+      margin-top: 5px;
+      letter-spacing: 4px;
+    }
+
+    #total {
+      border: 1px solid black;
+      background-color: white;
+    }
+
+    .subtotal {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      font-size: 14px;
+      color: #212121;
+    }
+
+    #color_green {
+      color: green;
+      border-bottom: 1px solid rgb(201, 199, 199);
+      height: 40px;
+      margin-top: 6px;
+    }
+
+    #one {
+      font-size: 20px;
+      font-weight: bolder;
+    }
+
+    #two {
+      font-size: 20px;
+    }
+
+    .payment {
+      background-color: #fff;
+      border-radius: 10px;
+      width: 360px;
+      height: 420px;
+      padding: 20px;
+      margin: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .secondp {
+      /* display: flex;
         flex-wrap: wrap; */
-        text-align: left;
-      }
+      text-align: left;
+    }
 
-      .flex1 {
-        display: flex;
-        margin: 10px;
-        justify-content: space-between;
-      }
+    .flex1 {
+      display: flex;
+      margin: 10px;
+      justify-content: space-between;
+    }
 
-      .flex1 p {
-        font-size: 18px;
-        margin-bottom: 5px;
-      }
+    .flex1 p {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
 
-      .flex1 .price,
-      .flex1 .ship,
-      .flex1 .sub,
-      .flex1 .dis,
-      .flex1 .dis2,
-      .flex1 .totalPrice {
-        font-weight: bold;
-      }
+    .flex1 .price,
+    .flex1 .ship,
+    .flex1 .sub,
+    .flex1 .dis,
+    .flex1 .dis2,
+    .flex1 .totalPrice {
+      font-weight: bold;
+    }
 
-      .final {
-        width: 100%;
-        padding-left: 10px;
-        margin-top: 20px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid rgb(156, 155, 155);
-      }
+    .final {
+      width: 100%;
+      padding-left: 10px;
+      margin-top: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgb(156, 155, 155);
+    }
 
-      .final p {
-        color: green;
-        font-weight: bold;
-      }
+    .final p {
+      color: green;
+      font-weight: bold;
+    }
 
-      .total div {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-        padding: 10px;
-      }
+    .total div {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      padding: 10px;
+    }
 
-      .total p {
-        font-size: 25px;
-        font-weight: bold;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="navbar"></div>
-    <div class="container">
-      <h1 id="head_check">Checkout</h1>
-      <div class="form_div">
-        <div id="form">
-          <div id="ship_head">
-            <h3>Add Shipping Address</h3>
-            <p onclick="clearAllFields()">Clear All</p>
-          </div>
-          <form id="add_form" action="/thankyou">
-            <input
-              id="first_name"
-              placeholder="First Name(Required)*"
-              required
-            />
-            <input id="last_name" placeholder="Last Name(Required)*" />
-            <input
-              id="pincode"
-              placeholder="Enter your PIN code(Required)*"
-              required
-            />
-            <br />
-            <div id="add">
-              <div id="city_state">
-                <input
-                  id="city"
-                  placeholder="City/district(Required)*"
-                  required
-                />
-                <input id="state" placeholder="State(Required)*" required />
+    .total p {
+      font-size: 25px;
+      font-weight: bold;
+    }
+  </style>
+</head>
 
-                <select id="land">
-                  <option value="Landmark">Landmark</option>
-                </select>
-                <div class="btn">
-                  <div id="radio-option">
-                    <input
-                      type="radio"
-                      name="fav_language"
-                      value="HTML"
-                      id="home-radio"
-                    />
-                    <label for="home-radio" class="radio-label">Home</label>
-                  </div>
-                  <div id="radio-option">
-                    <input
-                      type="radio"
-                      name="fav_language"
-                      value="HTML"
-                      id="office-radio"
-                    />
-                    <label for="office-radio" class="radio-label"
-                      >Official</label
-                    >
-                  </div>
+<body>
+  <div id="navbar"></div>
+  <div class="container">
+    <h1 id="head_check">Checkout</h1>
+    <div class="form_div">
+      <div id="form">
+        <div id="ship_head">
+          <h3>Add Shipping Address</h3>
+          <p onclick="clearAllFields()">Clear All</p>
+        </div>
+        <form id="add_form" action="/thankyou">
+          <input id="first_name" placeholder="First Name(Required)*" required />
+          <input id="last_name" placeholder="Last Name(Required)*" />
+          <input id="pincode" placeholder="Enter your PIN code(Required)*" required />
+          <br />
+          <div id="add">
+            <div id="city_state">
+              <input id="city" placeholder="City/district(Required)*" required />
+              <input id="state" placeholder="State(Required)*" required />
+
+              <select id="land">
+                <option value="Landmark">Landmark</option>
+              </select>
+              <div class="btn">
+                <div id="radio-option">
+                  <input type="radio" name="fav_language" value="HTML" id="home-radio" />
+                  <label for="home-radio" class="radio-label">Home</label>
+                </div>
+                <div id="radio-option">
+                  <input type="radio" name="fav_language" value="HTML" id="office-radio" />
+                  <label for="office-radio" class="radio-label">Official</label>
                 </div>
               </div>
-              <div id="comp_add">
-                <input
-                  id="full_address"
-                  placeholder="Flat/House No., Floor, Building/Company/Apartment Name,&#10;
-                    Road/Street Name, Area, Colony,
-                    Sector, Village (Required)*"
-                  required
-                />
-                <p id="char_limit">Character Limit : 120</p>
-                <input
-                  id="phone_no"
-                  placeholder="Phone/Mobile Number (Required)*"
-                  required
-                />
-              </div>
             </div>
-            <button class="cancelbtn">Cancel</button>
-            <button id="button" onclick="placeOrder()">Save & Continue</button>
-          </form>
-          <!-- <div id="continue">
+            <div id="comp_add">
+              <input id="full_address" placeholder="Flat/House No., Floor, Building/Company/Apartment Name,&#10;
+                    Road/Street Name, Area, Colony,
+                    Sector, Village (Required)*" required />
+              <p id="char_limit">Character Limit : 120</p>
+              <input id="phone_no" placeholder="Phone/Mobile Number (Required)*" required />
+            </div>
+          </div>
+          <button class="cancelbtn">
+            <a href="/cart" class="cancelbtn">Cancel</a>
+          </button>
+          <button id="button" onclick="placeOrder()">Save & Continue</button>
+        </form>
+        <!-- <div id="continue">
                <p>Cancel</p>
                <button id="button"><a href="/thankyou" style="text-decoration: none;color: white;">Save & Continue</a></button>
            </div> -->
-        </div>
-        <div class="payment">
-          <div class="secondp">
-            <div class="flex1">
-              <p>Bag Total</p>
-              <p class="price">0</p>
-            </div>
-            <div class="flex1">
-              <p>Shipping Charge</p>
-              <p class="ship">0</p>
-            </div>
-            <div class="flex1">
-              <p>Bag Subtotal</p>
-              <p class="sub">0</p>
-            </div>
-            <div class="flex1">
-              <p>Product Discount(s)</p>
-              <p class="dis">0</p>
-            </div>
-            <div class="final">
-              <p style="color: green">
-                You will save <span class="dis2">0</span> on this order
-              </p>
-            </div>
+      </div>
+      <div class="payment">
+        <div class="secondp">
+          <div class="flex1">
+            <p>Bag Total</p>
+            <p class="price">0</p>
+          </div>
+          <div class="flex1">
+            <p>Shipping Charge</p>
+            <p class="ship">0</p>
+          </div>
+          <div class="flex1">
+            <p>Bag Subtotal</p>
+            <p class="sub">0</p>
+          </div>
+          <div class="flex1">
+            <p>Product Discount(s)</p>
+            <p class="dis">0</p>
+          </div>
+          <div class="final">
+            <p style="color: green">
+              You will save <span class="dis2">0</span> on this order
+            </p>
+          </div>
 
-            <div class="total">
-              <div>
-                <p>Total Payable</p>
-                <p class="totalPrice">0</p>
-              </div>
+          <div class="total">
+            <div>
+              <p>Total Payable</p>
+              <p class="totalPrice">0</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </body>
-  <script src="/script/navmain.js" type="module"></script>
-  <script>
-    function clearAllFields() {
-      // Get all the form input fields
-      const formInputs = document.querySelectorAll("input");
+  </div>
+</body>
+<script src="/script/navmain.js" type="module"></script>
+<script>
+  function clearAllFields() {
+    // Get all the form input fields
+    const formInputs = document.querySelectorAll("input");
 
-      // Loop through the input fields and reset their values
-      formInputs.forEach((input) => {
-        input.value = "";
-      });
+    // Loop through the input fields and reset their values
+    formInputs.forEach((input) => {
+      input.value = "";
+    });
+  }
+  function placeOrder() {
+    const firstName = document.getElementById("first_name").value;
+    const pincode = document.getElementById("pincode").value;
+    const city = document.getElementById("city").value;
+    const state = document.getElementById("state").value;
+    const phone_no = document.getElementById("phone_no").value;
+    const full_address = document.getElementById("full_address").value;
+
+    // Enable or disable the button based on form completion
+    if (firstName && pincode && city && state && phone_no && full_address) {
+      // Assuming you have placed the order successfully
+      // Clear cart items from localStorage after placing the order
+
+      localStorage.removeItem("cart_data");
+      // Redirect to the thank you page
+      window.location.href = "/thankyou";
+    } else {
+      alert(
+        "Please fill in all the required fields before placing the order."
+      );
     }
-    function placeOrder() {
-      const firstName = document.getElementById("first_name").value;
-      const pincode = document.getElementById("pincode").value;
-      const city = document.getElementById("city").value;
-      const state = document.getElementById("state").value;
-      const phone_no = document.getElementById("phone_no").value;
-      const full_address = document.getElementById("full_address").value;
+  }
 
-      // Enable or disable the button based on form completion
-      if (firstName && pincode && city && state && phone_no && full_address) {
-        // Assuming you have placed the order successfully
-        // Clear cart items from localStorage after placing the order
-
-        localStorage.removeItem("cart_data");
-        // Redirect to the thank you page
-        window.location.href = "/thankyou";
-      } else {
-        alert(
-          "Please fill in all the required fields before placing the order."
-        );
+  let arr = JSON.parse(localStorage.getItem("cart_data")) || [];
+  display(arr);
+  function display(arr) {
+    let shipping = 49;
+    let sum = 0;
+    let subSum = 0;
+    arr.map(function (elm, ind) {
+      if (elm) {
+        sum += Number(arr[ind].mainPrice) * Number(arr[ind].quantity);
+        subSum += Number(arr[ind].discontPrice) * Number(arr[ind].quantity);
       }
+    });
+    document.querySelector(".price").textContent = "₹" + " " + sum;
+    document.querySelector(".totalPrice").textContent =
+      "₹" + " " + (subSum + 49);
+    document.querySelector(".sub").textContent = "₹" + " " + (sum + 49);
+    document.querySelector(".dis").textContent = "₹" + " " + (subSum - sum);
+    document.querySelector(".dis2").textContent = "₹" + " " + -(subSum - sum);
+    if (arr.length === 0) {
+      shipping = 0;
+      document.querySelector(".ship").textContent = "₹" + " " + shipping;
+      document.querySelector(".totalPrice").textContent = "₹" + " " + 0;
+      document.querySelector(".sub").textContent = "₹" + " " + shipping;
+    } else {
+      shipping = 49;
+      document.querySelector(".ship").textContent = "₹" + " " + shipping;
     }
+  }
+</script>
 
-    let arr = JSON.parse(localStorage.getItem("cart_data")) || [];
-    display(arr);
-    function display(arr) {
-      let shipping = 49;
-      let sum = 0;
-      let subSum = 0;
-      arr.map(function (elm, ind) {
-        if (elm) {
-          sum += Number(arr[ind].mainPrice) * Number(arr[ind].quantity);
-          subSum += Number(arr[ind].discontPrice) * Number(arr[ind].quantity);
-        }
-      });
-      document.querySelector(".price").textContent = "₹" + " " + sum;
-      document.querySelector(".totalPrice").textContent =
-        "₹" + " " + (subSum + 49);
-      document.querySelector(".sub").textContent = "₹" + " " + (sum + 49);
-      document.querySelector(".dis").textContent = "₹" + " " + (subSum - sum);
-      document.querySelector(".dis2").textContent = "₹" + " " + -(subSum - sum);
-      if (arr.length === 0) {
-        shipping = 0;
-        document.querySelector(".ship").textContent = "₹" + " " + shipping;
-        document.querySelector(".totalPrice").textContent = "₹" + " " + 0;
-        document.querySelector(".sub").textContent = "₹" + " " + shipping;
-      } else {
-        shipping = 49;
-        document.querySelector(".ship").textContent = "₹" + " " + shipping;
-      }
-    }
-  </script>
 </html>
