@@ -147,13 +147,70 @@
       margin-bottom: 10px;
       display: block;
     }
+    /* Add styles to center the empty cart image and message */
+    #emptyCartImageContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      margin-left: 500px;
+    }
+
+    #emptyCartImageContainer img {
+      width: 500px;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    #emptyCartImageContainer p {
+      font-size: 25px;
+      color: red;
+      font-weight: bolder;
+      margin-bottom: 10px;
+      margin-left: 200px;
+      text-align: center;
+    }
+
+    /* Adjust layout when cart is empty */
+    #productContainer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #emptyCartImageContainer {
+      display: none; /* Initially hide the empty cart message */
+    }
+
+    #continuebtn {
+      background-color: #ff1744;
+      padding: 20px;
+      color: white;
+      font-size: 20px;
+      font-weight: bolder;
+      border-radius: 20px;
+      border: none;
+      margin-left: 200px;
+    }
+    #continuebtn:hover {
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
   </style>
   <body>
     <div id="navbar"></div>
     <h1>My Bag</h1>
     <div id="toast-container"></div>
     <div class="main">
-      <div class="product"></div>
+      <div class="product" id="productContainer"></div>
+      <div id="emptyCartImageContainer">
+        <img
+          src="https://as2.ftcdn.net/v2/jpg/01/02/71/19/1000_F_102711930_V8YtaT6QNjVF8ftHk2pmlKRhakLw1cyN.jpg"
+          alt="Empty Bag Image"
+        />
+        <div><p>Your Cart is Empty</p></div>
+        <button id="continuebtn">Continue Shopping</button>
+      </div>
       <div class="payment">
         <div class="firstp">
           Some items in your order are eligible<br />
@@ -327,16 +384,26 @@
     document.querySelector(".sub").textContent = "₹" + " " + (sum + 49);
     document.querySelector(".dis").textContent = "₹" + " " + (subSum - sum);
     document.querySelector(".dis2").textContent = "₹" + " " + -(subSum - sum);
-
+    let productContainer = document.getElementById("productContainer");
+    let emptyCartImage = document.getElementById("emptyCartImageContainer");
     if (arr.length === 0) {
+      productContainer.style.display = "none"; // Hide product container
+      emptyCartImage.style.display = "block"; // Show empty cart image
       shipping = 0;
       document.querySelector(".ship").textContent = "₹" + " " + shipping;
       document.querySelector(".totalPrice").textContent = "₹" + " " + 0;
       document.querySelector(".sub").textContent = "₹" + " " + shipping;
       // return;
     } else {
+      productContainer.style.display = "block"; // Show product container
+      emptyCartImage.style.display = "none"; // Hide empty cart image
       shipping = 49;
       document.querySelector(".ship").textContent = "₹" + " " + shipping;
     }
+    document
+      .querySelector("#continuebtn")
+      .addEventListener("click", function () {
+        window.location.href = "/products";
+      });
   }
 </script>

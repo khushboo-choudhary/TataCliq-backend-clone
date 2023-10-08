@@ -5,10 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="https://www.tatacliq.com/favicon.ico" type="png" />
-    <title>
-      Online Fashion & Lifestyle Shopping for Women, Men & Kids in India - Tata
-      CLiQ
-    </title>
+    <title>Checkout Page - Tata CLiQ</title>
     <link rel="stylesheet" href="/style/navbar.css" />
     <style>
       * {
@@ -164,11 +161,19 @@
         margin-left: 25px;
       }
       .btn {
-        border: 1px solid transparent;
-        width: 350px;
-        height: 50px;
-        margin-top: 23px;
         display: flex;
+        flex-direction: row;
+        gap: 50px;
+      }
+
+      #radio-option {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .radio-label {
+        margin-left: 10px; /* Adjust the spacing between the radio button and label */
       }
       #home {
         border: 1px solid transparent;
@@ -193,7 +198,8 @@
         justify-content: space-around;
         margin-top: 20px;
       }
-      #button {
+      #button,
+      .cancelbtn {
         width: 150px;
         height: 40px;
         border-radius: 20px;
@@ -201,6 +207,7 @@
         color: white;
         font-size: 15px;
         border: none;
+        cursor: pointer;
       }
       #continue > p {
         color: rgb(255, 23, 68);
@@ -232,6 +239,68 @@
       #two {
         font-size: 20px;
       }
+
+      .payment {
+        background-color: #fff;
+        border-radius: 10px;
+        width: 360px;
+        height: 420px;
+        padding: 20px;
+        margin: 20px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .secondp {
+        /* display: flex;
+        flex-wrap: wrap; */
+        text-align: left;
+      }
+
+      .flex1 {
+        display: flex;
+        margin: 10px;
+        justify-content: space-between;
+      }
+
+      .flex1 p {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+
+      .flex1 .price,
+      .flex1 .ship,
+      .flex1 .sub,
+      .flex1 .dis,
+      .flex1 .dis2,
+      .flex1 .totalPrice {
+        font-weight: bold;
+      }
+
+      .final {
+        width: 100%;
+        padding-left: 10px;
+        margin-top: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgb(156, 155, 155);
+      }
+
+      .final p {
+        color: green;
+        font-weight: bold;
+      }
+
+      .total div {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        padding: 10px;
+      }
+
+      .total p {
+        font-size: 25px;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
@@ -242,7 +311,7 @@
         <div id="form">
           <div id="ship_head">
             <h3>Add Shipping Address</h3>
-            <p>Clear All</p>
+            <p onclick="clearAllFields()">Clear All</p>
           </div>
           <form id="add_form" action="/thankyou">
             <input
@@ -270,18 +339,25 @@
                   <option value="Landmark">Landmark</option>
                 </select>
                 <div class="btn">
-                  <div id="home">
-                    <input type="radio" name="fav_language" value="HTML" />
-                    <label for="html" id="hom">Home</label><br />
-                  </div>
-                  <div id="office">
+                  <div id="radio-option">
                     <input
                       type="radio"
                       name="fav_language"
                       value="HTML"
-                      required
+                      id="home-radio"
                     />
-                    <label for="html" id="official">Official</label><br />
+                    <label for="home-radio" class="radio-label">Home</label>
+                  </div>
+                  <div id="radio-option">
+                    <input
+                      type="radio"
+                      name="fav_language"
+                      value="HTML"
+                      id="office-radio"
+                    />
+                    <label for="office-radio" class="radio-label"
+                      >Official</label
+                    >
                   </div>
                 </div>
               </div>
@@ -301,38 +377,110 @@
                 />
               </div>
             </div>
-            <input id="button" type="submit" value="Save & Continue" />
+            <button class="cancelbtn">Cancel</button>
+            <button id="button" onclick="placeOrder()">Save & Continue</button>
           </form>
           <!-- <div id="continue">
                <p>Cancel</p>
                <button id="button"><a href="/thankyou" style="text-decoration: none;color: white;">Save & Continue</a></button>
            </div> -->
         </div>
-        <div id="total">
-          <p class="subtotal">
-            <span class="one">Bag Total</span>
-            <span class="two">₹3198.00</span>
-          </p>
-          <p class="subtotal">
-            <span class="one">Shipping Charges</span>
-            <span class="two">₹49.00</span>
-          </p>
-          <p class="subtotal">
-            <span class="one">Bag Subtotal</span>
-            <span class="two">₹3247.00</span>
-          </p>
-          <p class="subtotal">
-            <span class="one">Product Discount(s)</span>
-            <span class="two">-₹1919.00</span>
-          </p>
-          <p id="color_green">You will save ₹1919.00 on this order</p>
-          <p id="payable" class="subtotal">
-            <span id="one">Total Payable</span>
-            <span id="two">₹1328.00</span>
-          </p>
+        <div class="payment">
+          <div class="secondp">
+            <div class="flex1">
+              <p>Bag Total</p>
+              <p class="price">0</p>
+            </div>
+            <div class="flex1">
+              <p>Shipping Charge</p>
+              <p class="ship">0</p>
+            </div>
+            <div class="flex1">
+              <p>Bag Subtotal</p>
+              <p class="sub">0</p>
+            </div>
+            <div class="flex1">
+              <p>Product Discount(s)</p>
+              <p class="dis">0</p>
+            </div>
+            <div class="final">
+              <p style="color: green">
+                You will save <span class="dis2">0</span> on this order
+              </p>
+            </div>
+
+            <div class="total">
+              <div>
+                <p>Total Payable</p>
+                <p class="totalPrice">0</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </body>
   <script src="/script/navmain.js" type="module"></script>
+  <script>
+    function clearAllFields() {
+      // Get all the form input fields
+      const formInputs = document.querySelectorAll("input");
+
+      // Loop through the input fields and reset their values
+      formInputs.forEach((input) => {
+        input.value = "";
+      });
+    }
+    function placeOrder() {
+      const firstName = document.getElementById("first_name").value;
+      const pincode = document.getElementById("pincode").value;
+      const city = document.getElementById("city").value;
+      const state = document.getElementById("state").value;
+      const phone_no = document.getElementById("phone_no").value;
+      const full_address = document.getElementById("full_address").value;
+
+      // Enable or disable the button based on form completion
+      if (firstName && pincode && city && state && phone_no && full_address) {
+        // Assuming you have placed the order successfully
+        // Clear cart items from localStorage after placing the order
+
+        localStorage.removeItem("cart_data");
+        // Redirect to the thank you page
+        window.location.href = "/thankyou";
+      } else {
+        alert(
+          "Please fill in all the required fields before placing the order."
+        );
+      }
+    }
+
+    let arr = JSON.parse(localStorage.getItem("cart_data")) || [];
+    display(arr);
+    function display(arr) {
+      let shipping = 49;
+      let sum = 0;
+      let subSum = 0;
+      arr.map(function (elm, ind) {
+        if (elm) {
+          sum += Number(arr[ind].mainPrice) * Number(arr[ind].quantity);
+          subSum += Number(arr[ind].discontPrice) * Number(arr[ind].quantity);
+        }
+      });
+      document.querySelector(".price").textContent = "₹" + " " + sum;
+      document.querySelector(".totalPrice").textContent =
+        "₹" + " " + (subSum + 49);
+      document.querySelector(".sub").textContent = "₹" + " " + (sum + 49);
+      document.querySelector(".dis").textContent = "₹" + " " + (subSum - sum);
+      document.querySelector(".dis2").textContent = "₹" + " " + -(subSum - sum);
+      if (arr.length === 0) {
+        shipping = 0;
+        document.querySelector(".ship").textContent = "₹" + " " + shipping;
+        document.querySelector(".totalPrice").textContent = "₹" + " " + 0;
+        document.querySelector(".sub").textContent = "₹" + " " + shipping;
+      } else {
+        shipping = 49;
+        document.querySelector(".ship").textContent = "₹" + " " + shipping;
+      }
+    }
+  </script>
 </html>
