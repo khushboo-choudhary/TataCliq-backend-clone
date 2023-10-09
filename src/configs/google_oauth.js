@@ -9,7 +9,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "https://tatacliq-website.onrender.com/",
+      callbackURL: "https://tatacliq-website.onrender.com/auth",
       // callbackURL: "http://localhost:2345/auth/google/callback",
       passReqToCallback: true,
     },
@@ -31,7 +31,7 @@ passport.use(
       //   return done(err, user);
       // });
 
-      // console.log("user", user);
+      console.log("user", user);
       return done(null, user);
     }
   )
