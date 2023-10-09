@@ -47,22 +47,26 @@ Data Base
 
 ![Screenshot![Screenshot (1260)](https://user-images.githubusercontent.com/66282953/158455722-0aa1dba1-ba53-47a8-a3df-79b72fe12d25.png)
  (1259)](https://user-images.githubusercontent.com/66282953/158454744-c496b207-8ef5-483b-9143-13017b3bbe0d.png)
+<br></br>
 
 - Product Page
 
 ![Screenshot (1260)](https://user-images.githubusercontent.com/66282953/158455672-88919430-1db5-4686-9be0-4870a191bda6.png)
+<br></br>
 
 - Cart Page
 
 ![nine](https://user-images.githubusercontent.com/66282953/158456661-4ec1351d-1531-4edf-97c2-79ace11e7f0a.png)
+<br></br>
 
 - Checkout Page
 
-<img width="959" alt="checkout_page" src="https://github.com/khushboo-choudhary/TataCliq-backend-clone/assets/30701525/0f547042-2665-40d4-acce-5513ed94a81c">
+![checkout_page](https://user-images.githubusercontent.com/30701525/273502111-0f547042-2665-40d4-acce-5513ed94a81c.png)
+<br></br>
 
 - Successful Page
 
-<img width="960" alt="thankyou_page" src="https://github.com/khushboo-choudhary/TataCliq-backend-clone/assets/30701525/7f881c57-e8b4-4139-aa4f-6496d04345ec">
+![Thankyou_page](https://user-images.githubusercontent.com/30701525/273503091-7f881c57-e8b4-4139-aa4f-6496d04345ec.png)
 
 # How to use📌
 
