@@ -31,7 +31,6 @@ passport.use(
       //   return done(err, user);
       // });
 
-      console.log("user", user);
       return done(null, user);
     }
   )

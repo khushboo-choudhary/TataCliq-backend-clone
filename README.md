@@ -56,6 +56,10 @@ Data Base
 
 ![nine](https://user-images.githubusercontent.com/66282953/158456661-4ec1351d-1531-4edf-97c2-79ace11e7f0a.png)
 
+- Checkout Page
+
+![nine](https://github.com/khushboo-choudhary/TataCliq-backend-clone/blob/master/checkout_page.png)
+
 # How to use📌
 
 Users can log in to flatheads by clicking the login button and entering their credentials, new users can register by clicking the register button and filling out a simple form; after a successful login, users can begin shopping by selecting a category and sorting products according to their preferences, after selecting a product, users can add it to their cart or keep it on their wishlist. They can place an order by simply clicking the place order button, and they will receive notification that their order has been placed successfully.
