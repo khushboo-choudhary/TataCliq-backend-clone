@@ -58,9 +58,11 @@ Data Base
 
 - Checkout Page
 
-![nine](https://github.com/khushboo-choudhary/TataCliq-backend-clone/blob/master/checkout_page.png)
+<img width="959" alt="checkout_page" src="https://github.com/khushboo-choudhary/TataCliq-backend-clone/assets/30701525/0f547042-2665-40d4-acce-5513ed94a81c">
 
-(![Alt text](image.png))
+- Successful Page
+
+<img width="960" alt="thankyou_page" src="https://github.com/khushboo-choudhary/TataCliq-backend-clone/assets/30701525/7f881c57-e8b4-4139-aa4f-6496d04345ec">
 
 # How to use📌
 
